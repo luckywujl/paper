@@ -20,7 +20,8 @@ class Product extends Backend
     protected $searchFields = 'product';
     protected $dataLimit = 'personal';
     protected $dataLimitField = 'company_id';
-    //protected $noNeedRight = ['index','getinchannelinfo','getoutchannelinfo','clearplate'];
+    protected $noNeedRight = ['index','getproduct','getweight'];
+    
 
     public function _initialize()
     {
@@ -39,6 +40,46 @@ class Product extends Backend
      * 因此在当前控制器中可不用编写增删改查的代码,除非需要自己控制这部分逻辑
      * 需要将application/admin/library/traits/Backend.php中对应的方法复制到当前控制器,然后进行修改
      */
+    /**
+     * 获取产品名称
+     */
+    public function getproduct()
+    {
+        //设置过滤方法
+        $this->request->filter(['strip_tags', 'trim']);
+        if ($this->request->isAjax()) {
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            $list = $this->model
+                ->where($where)
+                ->group('product')
+                ->order($sort, $order)
+                ->paginate($limit);
+            $result = array("total" => $list->total(), "rows" => $list->items());
+            return json($result);
+        }
+        return $this->view->fetch();
+    }
     
+    /**
+     * 获取克重
+     */
+    public function getweight()
+    {
+    		$product = ()
+        //设置过滤方法
+        $this->request->filter(['strip_tags', 'trim']);
+        if ($this->request->isAjax()) {
+            list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+            $list = $this->model
+                ->where($where)
+                ->where('product',$product)
+                ->order($sort, $order)
+                ->paginate($limit);
+            $result = array("total" => $list->total(), "rows" => $list->items());
+            return json($result);
+        }
+        return $this->view->fetch();
+    }
+
 
 }

@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/product/product/index.html";i:1611143737;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/product/product/index.html";i:1611145565;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -62,16 +62,111 @@
     <?php echo build_heading(); ?>
 
     <div class="panel-body">
+    <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+   
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_name'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_name" data-source="base/product/getproduct" data-field="product" data-primary-key="product" class="form-control selectpage" name="row[product_name]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_productweight'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_productweight" class="form-control" name="row[product_productweight]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_grade'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_grade" class="form-control" name="row[product_grade]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_quality'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_quality" class="form-control" name="row[product_quality]" type="text">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_specs'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_specs" class="form-control" name="row[product_specs]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_unit'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_unit" class="form-control" name="row[product_unit]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_weight'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_weight" class="form-control" name="row[product_weight]" type="number">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_diameter'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_diameter" class="form-control" name="row[product_diameter]" type="number">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_broken'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_broken" class="form-control" name="row[product_broken]" type="number">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_mother_code'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_mother_code" class="form-control" name="row[product_mother_code]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_storage'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_storage" class="form-control" name="row[product_storage]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_product_datetime'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_product_datetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[product_product_datetime]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_inbound_datetime'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_inbound_datetime" class="form-control datetimepicker" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[product_inbound_datetime]" type="text" value="<?php echo date('Y-m-d H:i:s'); ?>">
+        </div>
+
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_group'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_group" class="form-control" name="row[product_group]" type="text">
+        </div>
+   
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_machine'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_machine" class="form-control" name="row[product_machine]" type="text">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1"><?php echo __('Product_qc'); ?>:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-product_QC" class="form-control" name="row[product_QC]" type="text">
+        </div>
+    </div>
+    
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled"><?php echo __('OK'); ?></button>
+            <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>
+        </div>
+    </div>
+</form>
+
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade active in" id="one">
                 <div class="widget-body no-padding">
                     <div id="toolbar" class="toolbar">
                         <a href="javascript:;" class="btn btn-primary btn-refresh" title="<?php echo __('Refresh'); ?>" ><i class="fa fa-refresh"></i> </a>
-                        <a href="javascript:;" class="btn btn-success btn-add <?php echo $auth->check('product/product/add')?'':'hide'; ?>" title="<?php echo __('Add'); ?>" ><i class="fa fa-plus"></i> <?php echo __('Add'); ?></a>
                         <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled <?php echo $auth->check('product/product/edit')?'':'hide'; ?>" title="<?php echo __('Edit'); ?>" ><i class="fa fa-pencil"></i> <?php echo __('Edit'); ?></a>
                         <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled <?php echo $auth->check('product/product/del')?'':'hide'; ?>" title="<?php echo __('Delete'); ?>" ><i class="fa fa-trash"></i> <?php echo __('Delete'); ?></a>
-                        <a href="javascript:;" class="btn btn-danger btn-import <?php echo $auth->check('product/product/import')?'':'hide'; ?>" title="<?php echo __('Import'); ?>" id="btn-import-file" data-url="ajax/upload" data-mimetype="csv,xls,xlsx" data-multiple="false"><i class="fa fa-upload"></i> <?php echo __('Import'); ?></a>
-
+                        
                         <div class="dropdown btn-group <?php echo $auth->check('product/product/multi')?'':'hide'; ?>">
                             <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> <?php echo __('More'); ?></a>
                             <ul class="dropdown-menu text-left" role="menu">

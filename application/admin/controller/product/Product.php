@@ -17,6 +17,10 @@ class Product extends Backend
      * @var \app\admin\model\product\Product
      */
     protected $model = null;
+    protected $searchFields = 'product_code,product_name';
+    protected $dataLimit = 'personal';
+    protected $dataLimitField = 'company_id';
+    //protected $noNeedRight = ['index'];
 
     public function _initialize()
     {

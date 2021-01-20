@@ -8,7 +8,7 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_name')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_name" data-source="base/product/getproduct" data-field="product" data-primary-key="product" class="form-control selectpage" name="row[product_name]" type="text">
+            <input id="c-product_name" class="form-control" name="row[product_name]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_productweight')}:</label>
