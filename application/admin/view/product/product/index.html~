@@ -8,28 +8,28 @@
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_name')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_name" class="form-control" name="row[product_name]" type="text">
+            <input id="c-product_name" data-source="base/product/getproduct" data-field="product" data-primary-key="product" class="form-control selectpage" name="row[product_name]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_productweight')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_productweight" class="form-control" name="row[product_productweight]" type="text">
+            <input id="c-product_productweight" data-source="base/product/getweight" data-field="product_weight" data-primary-key="product_weight" class="form-control selectpage" name="row[product_productweight]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_grade')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_grade" class="form-control" name="row[product_grade]" type="text">
+            <input id="c-product_grade" data-source="base/grade/index" data-field="grade" data-primary-key="grade" class="form-control selectpage" name="row[product_grade]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_quality')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_quality" class="form-control" name="row[product_quality]" type="text">
+            <input id="c-product_quality" data-source="base/quality/index" data-field="quality" data-primary-key="quality" class="form-control selectpage" name="row[product_quality]" type="text">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_specs')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_specs" class="form-control" name="row[product_specs]" type="text">
+            <input id="c-product_specs" data-source="base/specs/index" data-field="specs" data-primary-key="specs"  class="form-control selectpage" name="row[product_specs]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_unit')}:</label>
@@ -39,18 +39,18 @@
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_weight')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_weight" class="form-control" name="row[product_weight]" type="number">
+            <input id="c-product_weight" data-rule="required" class="form-control" name="row[product_weight]" type="number">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_diameter')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_diameter" class="form-control" name="row[product_diameter]" type="number">
+            <input id="c-product_diameter"  class="form-control" name="row[product_diameter]" type="text">
         </div>
     </div>
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_broken')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_broken" class="form-control" name="row[product_broken]" type="number">
+            <input id="c-product_broken"  class="form-control" name="row[product_broken]" type="number">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_mother_code')}:</label>
@@ -60,7 +60,7 @@
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_storage')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_storage" class="form-control" name="row[product_storage]" type="text">
+            <input id="c-product_storage" data-rule="required" data-source="base/storage/index" data-field="storage" data-primary-key="storage" class="form-control selectpage" name="row[product_storage]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_product_datetime')}:</label>
@@ -76,25 +76,26 @@
 
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_group')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_group" class="form-control" name="row[product_group]" type="text">
+            <input id="c-product_group" data-source="setting/group/index" data-field="group" data-primary-key="group" class="form-control selectpage" name="row[product_group]" type="text">
         </div>
    
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_machine')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_machine" class="form-control" name="row[product_machine]" type="text">
+            <input id="c-product_machine" data-source="setting/machine/index" data-field="machine" data-primary-key="machine" class="form-control selectpage" name="row[product_machine]" type="text">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1">{:__('Product_qc')}:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-product_QC" class="form-control" name="row[product_QC]" type="text">
+            <input id="c-product_QC" data-source="setting/person/index" data-field="person" data-primary-key="person" class="form-control selectpage" name="row[product_QC]" type="text">
         </div>
     </div>
     
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">
-            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            
             <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+            <button type="button" class="btn btn-info btn-embossed btn-accept">{:__('确定')}</button>
         </div>
     </div>
 </form>

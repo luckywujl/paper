@@ -1,7 +1,44 @@
-define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefined, Backend, Table, Form) {
+define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function ($, undefined, Backend, Table,Form,Printing) {
 
     var Controller = {
         index: function () {
+        	$("#c-product_name").on('change',function(){
+         	var product = $('#c-product_name').val();
+            $("#c-product_productweight").selectPageClear();
+            //改变下面这个框的数据源
+            $("#c-product_productweight_text").data("selectPageObject").option.data = 'base/product/getweight?product='+product;   
+        	});
+        //提交	
+        $(document).on("click",".btn-accept",function () {
+            $("#add-form").attr("action","product/product/index").submit();
+        });
+        
+        //定时读取服务器端的重量数据和车牌信息并更新时间
+				setInterval(function(){
+  				 //更新页面时间
+  				 var myDate = new Date();
+  				 $("#c-product_product_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				 $("#c-product_inbound_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				}, 1000);
+			
+			 //补打印标签
+				$(document).on("click", ".btn-print", function(index){
+					var ids = Table.api.selectedids(table);
+				    $.ajax({
+                        url: "product/product/print?product_id="+ids,
+                        type: 'post',
+                        dataType: 'json',
+                        success: function (ret) {
+                            var options ={
+                                templateCode:'FSBQ',
+                                data:ret.data,
+                            };
+                            Printing.api.printTemplate(options);
+                        }, error: function (e) {
+                            Backend.api.toastr.error(e.message);
+                        }
+                    });		
+				});	
         	Controller.api.bindevent();
             // 初始化表格参数配置
             Table.api.init({
@@ -26,7 +63,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                 columns: [
                     [
                         {checkbox: true},
-                        {field: 'product_id', title: __('Product_id')},
+                        //{field: 'product_id', title: __('Product_id')},
                         {field: 'product_code', title: __('Product_code'), operate: 'LIKE'},
                         {field: 'product_name', title: __('Product_name'), operate: 'LIKE'},
                         {field: 'product_productweight', title: __('Product_productweight'), operate: 'LIKE'},
@@ -44,13 +81,13 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'product_sale_datetime', title: __('Product_sale_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
                         {field: 'product_group', title: __('Product_group'), operate: 'LIKE'},
                         {field: 'product_machine', title: __('Product_machine'), operate: 'LIKE'},
-                        {field: 'product_operator', title: __('Product_operator'), operate: 'LIKE'},
+                        //{field: 'product_operator', title: __('Product_operator'), operate: 'LIKE'},
                         {field: 'product_QC', title: __('Product_qc'), operate: 'LIKE'},
-                        {field: 'product_sale_code', title: __('Product_sale_code'), operate: 'LIKE'},
-                        {field: 'product_sale_operator', title: __('Product_sale_operator'), operate: 'LIKE'},
-                        {field: 'product_sale_person', title: __('Product_sale_person'), operate: 'LIKE'},
-                        {field: 'product_status', title: __('Product_status'), searchList: {"0":__('Product_status 0'),"1":__('Product_status 1'),"2":__('Product_status 2'),"3":__('Product_status 3')}, formatter: Table.api.formatter.status},
-                        {field: 'company_id', title: __('Company_id')},
+                        //{field: 'product_sale_code', title: __('Product_sale_code'), operate: 'LIKE'},
+                        //{field: 'product_sale_operator', title: __('Product_sale_operator'), operate: 'LIKE'},
+                        //{field: 'product_sale_person', title: __('Product_sale_person'), operate: 'LIKE'},
+                        //{field: 'product_status', title: __('Product_status'), searchList: {"0":__('Product_status 0'),"1":__('Product_status 1'),"2":__('Product_status 2'),"3":__('Product_status 3')}, formatter: Table.api.formatter.status},
+                        //{field: 'company_id', title: __('Company_id')},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -67,7 +104,40 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         },
         api: {
             bindevent: function () {
-                Form.api.bindevent($("form[role=form]"));
+                Form.api.bindevent($("form[role=form]"),function (data,ret) {
+                  //数据保存成功后执行，清除产品重量接头数，再打印
+                  $("#c-product_weight").val('');
+                  $("#c-product_diameter").val('');
+                  $("#c-product_broken").val('');
+                  //打印单据
+				   	$.ajax({
+                        url: "product/product/print",
+                        type: 'post',
+                        dataType: 'json',
+                        data: {product_id:data.product_id},
+                        success: function (ret) {
+                            var options ={
+                                templateCode:'FSBQ',
+                                data:ret.data,
+                            };
+                            Printing.api.printTemplate(options);
+                        }, error: function (e) {
+                            Backend.api.toastr.error(e.message);
+                        }
+                    });	
+                  //刷新表格
+   				   $("#table").bootstrapTable('refresh');
+   				   }, function(data, ret){
+  						Toastr.success("失败");
+				   	}, function(success, error){
+
+					//bindevent的第三个参数为提交前的回调
+					//如果我们需要在表单提交前做一些数据处理，则可以在此方法处理
+					//注意如果我们需要阻止表单，可以在此使用return false;即可
+					//如果我们处理完成需要再次提交表单则可以使用submit提交,如下
+					//Form.api.submit(this, success, error);
+					//return false;
+                });
             }
         }
     };

@@ -65,14 +65,15 @@ class Product extends Backend
      */
     public function getweight()
     {
-    		$product = ()
+    	  $product = $this->request->param();
+    	//  $product = input('?product');
         //设置过滤方法
         $this->request->filter(['strip_tags', 'trim']);
         if ($this->request->isAjax()) {
             list($where, $sort, $order, $offset, $limit) = $this->buildparams();
             $list = $this->model
                 ->where($where)
-                ->where('product',$product)
+                ->where('product',$product['product'])
                 ->order($sort, $order)
                 ->paginate($limit);
             $result = array("total" => $list->total(), "rows" => $list->items());
