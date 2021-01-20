@@ -26,6 +26,8 @@ class Admin extends Backend
     protected $searchFields = 'id,username,nickname';
     protected $childrenGroupIds = [];
     protected $childrenAdminIds = [];
+    protected $dataLimit = 'personal';
+    protected $dataLimitField = 'company_id';
 
     public function _initialize()
     {
@@ -125,12 +127,21 @@ class Admin extends Backend
                 if (!Validate::is($params['password'], '\S{6,16}')) {
                     $this->error(__("Please input correct password"));
                 }
+                //根据当前操作员性质给出添加数据的数据所有者ID
+                $company_id = $this->auth->isSuperAdmin() ? 0 : $this->auth->company_id;
+                $params[$this->dataLimitField] = $company_id;
                 $params['salt'] = Random::alnum();
                 $params['password'] = md5(md5($params['password']) . $params['salt']);
                 $params['avatar'] = '/assets/img/avatar.png'; //设置新管理员默认头像。
                 $result = $this->model->validate('Admin.add')->save($params);
                 if ($result === false) {
                     $this->error($this->model->getError());
+                }
+                //更新刚刚添加的数据的company_id字段为
+                if ($company_id==0) {
+                	$data['id'] = $this->model->id;
+                	$data[$this->dataLimitField] = $this->model->id;
+                	$this->model->save($data);
                 }
                 $group = $this->request->post("group/a");
 

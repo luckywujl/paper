@@ -97,7 +97,7 @@ trait Backend
                 $params = $this->preExcludeFields($params);
 
                 if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
-                    $params[$this->dataLimitField] = $this->auth->id;
+                    $params[$this->dataLimitField] = $this->auth->company_id;
                 }
                 $result = false;
                 Db::startTrans();
