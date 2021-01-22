@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/product/product/index.html";i:1611159240;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/product/product/index.html";i:1611304561;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -156,6 +156,7 @@
             
             <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>
             <button type="button" class="btn btn-info btn-embossed btn-accept"><?php echo __('确定'); ?></button>
+            
         </div>
     </div>
 </form>
@@ -167,7 +168,7 @@
                         <a href="javascript:;" class="btn btn-primary btn-refresh" title="<?php echo __('Refresh'); ?>" ><i class="fa fa-refresh"></i> </a>
                         <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled <?php echo $auth->check('product/product/edit')?'':'hide'; ?>" title="<?php echo __('Edit'); ?>" ><i class="fa fa-pencil"></i> <?php echo __('Edit'); ?></a>
                         <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled <?php echo $auth->check('product/product/del')?'':'hide'; ?>" title="<?php echo __('Delete'); ?>" ><i class="fa fa-trash"></i> <?php echo __('Delete'); ?></a>
-                        <a href="javascript:;" class="btn btn-info btn-print btn-disabled disabled <?php echo $auth->check('product/product/print')?'':'hide'; ?>" title="<?php echo __('补打标签'); ?>" ><i class="fa fa-leaf"></i> <?php echo __('补打标签'); ?></a>
+                        <a href="javascript:;" class="btn btn-info btn-printing btn-disabled disabled <?php echo $auth->check('product/product/print')?'':'hide'; ?>" title="<?php echo __('printing'); ?>" ><i class="fa fa-leaf"></i> <?php echo __('Printing'); ?></a>
                         
                         <div class="dropdown btn-group <?php echo $auth->check('product/product/multi')?'':'hide'; ?>">
                             <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> <?php echo __('More'); ?></a>

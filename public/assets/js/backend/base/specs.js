@@ -41,6 +41,24 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
         },
         edit: function () {
             Controller.api.bindevent();
+            require.config({
+            	paths:{
+            		"jsBarcode":["/assets/js/JsBarcode.all.min"],
+            		"qrcode":["/assets/js/jquery.qrcode.min"],
+            	}
+            });
+            require(["jsBarcode","qrcode"],function () {
+            	$("#barcode").JsBarcode($("#c-specs").val());
+            	$("#qrcode").qrcode({
+            		render:"canvas",
+            		width:100,
+            		height:100,
+            		text:$("#c-specs").val(),
+            	});
+            	window.print();
+            	parent.Layer.closeAll();
+           
+            });
         },
         api: {
             bindevent: function () {

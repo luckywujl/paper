@@ -20,7 +20,7 @@ class Product extends Backend
     protected $searchFields = 'product_code,product_name';
     protected $dataLimit = 'personal';
     protected $dataLimitField = 'company_id';
-    //protected $noNeedRight = ['index'];
+    protected $noNeedRight = ['printingone'];
 
     public function _initialize()
     {
@@ -125,17 +125,46 @@ class Product extends Backend
     }
     
     /**
+     * 批量打印
+     */
+    public function printing($ids = null)
+    {
+        $row = $this->model->get($ids);
+        if (!$row) {
+            $this->error(__('No Results were found'));
+        }
+        $adminIds = $this->getDataLimitAdminIds();
+        if (is_array($adminIds)) {
+            if (!in_array($row[$this->dataLimitField], $adminIds)) {
+                $this->error(__('You have no permission'));
+            }
+        }
+       
+        $this->view->assign("row", $row);
+        return $this->view->fetch();
+    }
+    /**
      * 打印
      */
-    public function print()
+    public function printingone()
     {
-    	 $params = $this->request->param();//接收过滤条件
-    	 if(input('?product_id')) {
-    	   $product_info = $this->model
+        $params = $this->request->param();//接收过滤条件
+        if(input('?product_id')) {
+    	   $row = $this->model
     	   ->where('product_id',$params['product_id'])->find();
-        $result = array("data" => $product_info);
-    	 }
-        return json($result);
+        }
+        if (!$row) {
+            $this->error(__('No Results were found'));
+        }
+        $adminIds = $this->getDataLimitAdminIds();
+        if (is_array($adminIds)) {
+            if (!in_array($row[$this->dataLimitField], $adminIds)) {
+                $this->error(__('You have no permission'));
+            }
+        }
+       
+        $this->view->assign("row", $row);
+        return $this->view->fetch("product/product/printing");
     }
 
 

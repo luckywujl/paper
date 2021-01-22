@@ -1,0 +1,50 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+
+<table border="0" cellspacing="100mm">
+  <tr style="height: 28mm">
+    <td style="padding-left: 40mm;font-size: 10mm"><a>{$row.product_specs|htmlentities}</a></td>
+    <td style="padding-left: 40mm;font-size: 10mm"><a>{$row.product_productweight|htmlentities}</a></td>
+  </tr>
+  <tr style="height: 25mm">
+    <td style="padding-left: 40mm;font-size: 10mm"><a>{$row.product_weight|htmlentities}</a></td>
+    <td style="padding-left: 40mm;font-size: 10mm"><a></a></td>
+  </tr>
+  <tr style="height: 25mm">
+    <td style="padding-left: 40mm;font-size: 10mm"><a>{$row.product_QC|htmlentities}</a></td>
+    <td style="padding-left: 40mm;font-size: 10mm"><a><svg id="barcode"></svg></a></td>
+  </tr>
+  <tr style="height: 25mm">
+    <td style="padding-left: 40mm;font-size: 10mm"><h3><a>{$row.product_machine|htmlentities}{$row.product_group|htmlentities}</a></h3></td>
+    <td style="padding-left: 40mm;font-size: 8mm"><a id="product_date"></a></td>
+  </tr>
+</table>
+        <div class="col-xs-12 col-sm-8" hidden="hidden">
+            <input id="c-product_code" class="form-control" name="row[product_code]" type="text" value="{$row.product_code|htmlentities}">
+            <input id="c-product_product_datetime" class="form-control" name="row[product_code]" type="text" value="{$row.product_product_datetime|htmlentities}">
+            
+        </div>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>    
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<p><br></p>
+<label class="control-label col-xs-12 col-sm-10"></label>
+<div class="col-xs-12 col-sm-2">
+  <div id="qrcode"></div>
+</div> 
+
+</form>

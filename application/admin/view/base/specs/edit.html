@@ -2,11 +2,14 @@
 
     <div class="form-group">
         <label class="control-label col-xs-12 col-sm-2">{:__('Specs')}:</label>
+        
         <div class="col-xs-12 col-sm-8">
             <input id="c-specs" data-rule="required" class="form-control" name="row[specs]" type="text" value="{$row.specs|htmlentities}">
+        		<svg id="barcode"></svg>
+        		<div id="qrcode"></div>
         </div>
     </div>
-    
+    <li><a href="{“/base/product”}" target='_blank'>帮助</a></li>
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

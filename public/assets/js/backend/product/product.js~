@@ -12,6 +12,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
         $(document).on("click",".btn-accept",function () {
             $("#add-form").attr("action","product/product/index").submit();
         });
+        $(document).on("click",".btn-print",function () {
+           Fast.api.open('product/product/printingone?product_id=1','打印标签',{}); 
+        });
+        
         
         //定时读取服务器端的重量数据和车牌信息并更新时间
 				setInterval(function(){
@@ -21,25 +25,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
 				 $("#c-product_inbound_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
 				}, 1000);
 			
-			 //补打印标签
-				$(document).on("click", ".btn-print", function(index){
-					var ids = Table.api.selectedids(table);
-				    $.ajax({
-                        url: "product/product/print?product_id="+ids,
-                        type: 'post',
-                        dataType: 'json',
-                       
-                        success: function (ret) {
-                            var options ={
-                                templateCode:'FSBQ',
-                                data:ret.data,
-                            };
-                            Printing.api.printTemplate(options);
-                        }, error: function (e) {
-                            Backend.api.toastr.error(e.message);
-                        }
-                    });		
-				});	
+			 
         	Controller.api.bindevent();
             // 初始化表格参数配置
             Table.api.init({
@@ -49,7 +35,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
                     edit_url: 'product/product/edit',
                     del_url: 'product/product/del',
                     //multi_url: 'product/product/multi',
-                    //import_url: 'product/product/import',
+                    printing_url: 'product/product/printing',
                     table: 'product_product',
                 }
             });
@@ -79,7 +65,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
                         {field: 'product_storage', title: __('Product_storage'), operate: 'LIKE'},
                         {field: 'product_product_datetime', title: __('Product_product_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
                         {field: 'product_inbound_datetime', title: __('Product_inbound_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        {field: 'product_sale_datetime', title: __('Product_sale_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
+                        //{field: 'product_sale_datetime', title: __('Product_sale_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
                         {field: 'product_group', title: __('Product_group'), operate: 'LIKE'},
                         {field: 'product_machine', title: __('Product_machine'), operate: 'LIKE'},
                         //{field: 'product_operator', title: __('Product_operator'), operate: 'LIKE'},
@@ -103,6 +89,70 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
         edit: function () {
             Controller.api.bindevent();
         },
+        printing: function () {
+            Controller.api.bindevent();
+            require.config({
+            	paths:{
+            		"jsBarcode":["/assets/js/JsBarcode.all.min"],
+            		"qrcode":["/assets/js/jquery.qrcode.min"],
+            	}
+            });
+            require(["jsBarcode","qrcode"],function () {
+            	$("#barcode").JsBarcode($("#c-product_code").val(),{
+                	height:60,//高度
+ 						width:2,//设置条之间的宽度
+ 						fontSize:15,//设置文本的大小
+					});
+            	$("#qrcode").qrcode({
+            		render:"canvas",
+            		width:80,
+            		height:80,
+            		text:$("#c-product_code").val(),
+            	});
+            	var myDate = new Date($("#c-product_product_datetime").val()*1000);
+            	var aObj = document.getElementById("product_date");
+                   //aObj.href = "http://www.baidu.com";
+                  //根据id获取超链接,设置文字内容 
+                  aObj.innerText = myDate.getFullYear()+"\xa0\xa0\xa0\xa0\xa0"+(parseInt(myDate.getMonth())+1)+"\xa0\xa0\xa0\xa0\xa0"+myDate.getDate();
+  			     // $("#product_date").innerText = myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				 
+            	window.print();
+            	parent.Layer.closeAll();
+           
+            });
+        },
+        printingone: function () {
+            Controller.api.bindevent();
+            require.config({
+            	paths:{
+            		"jsBarcode":["/assets/js/JsBarcode.all.min"],
+            		"qrcode":["/assets/js/jquery.qrcode.min"],
+            	}
+            });
+            require(["jsBarcode","qrcode"],function () {
+            	$("#barcode").JsBarcode($("#c-product_code").val(),{
+                	height:60,//高度
+ 						width:2,//设置条之间的宽度
+ 						fontSize:15,//设置文本的大小
+					});
+            	$("#qrcode").qrcode({
+            		render:"canvas",
+            		width:80,
+            		height:80,
+            		text:$("#c-product_code").val(),
+            	});
+            	var myDate = new Date($("#c-product_product_datetime").val()*1000);
+            	var aObj = document.getElementById("product_date");
+                   //aObj.href = "http://www.baidu.com";
+                  //根据id获取超链接,设置文字内容 
+                  aObj.innerText = myDate.getFullYear()+"\xa0\xa0\xa0\xa0\xa0"+(parseInt(myDate.getMonth())+1)+"\xa0\xa0\xa0\xa0\xa0"+myDate.getDate();
+  			     // $("#product_date").innerText = myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				 
+            	window.print();
+            	parent.Layer.closeAll();
+           
+            });
+        },
         api: {
             bindevent: function () {
                 Form.api.bindevent($("form[role=form]"),function (data,ret) {
@@ -111,21 +161,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
                   $("#c-product_diameter").val('');
                   $("#c-product_broken").val('');
                   //打印单据
-				   	$.ajax({
-                        url: "product/product/print",
-                        type: 'post',
-                        dataType: 'json',
-                        data: {product_id:data.product_id},
-                        success: function (ret) {
-                            var options ={
-                                templateCode:'FSBQ',
-                                data:ret.data,
-                            };
-                            Printing.api.printTemplate(options);
-                        }, error: function (e) {
-                            Backend.api.toastr.error(e.message);
-                        }
-                    });	
+                  Fast.api.open('product/product/printingone?product_id='+data.product_id,'打印标签',{}); 	
+                 
                   //刷新表格
    				   $("#table").bootstrapTable('refresh');
    				   }, function(data, ret){

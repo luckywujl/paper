@@ -96,6 +96,7 @@
             
             <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
             <button type="button" class="btn btn-info btn-embossed btn-accept">{:__('确定')}</button>
+            
         </div>
     </div>
 </form>
@@ -107,7 +108,7 @@
                         <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
                         <a href="javascript:;" class="btn btn-success btn-edit btn-disabled disabled {:$auth->check('product/product/edit')?'':'hide'}" title="{:__('Edit')}" ><i class="fa fa-pencil"></i> {:__('Edit')}</a>
                         <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled {:$auth->check('product/product/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
-                        <a href="javascript:;" class="btn btn-info btn-print btn-disabled disabled {:$auth->check('product/product/print')?'':'hide'}" title="{:__('补打标签')}" ><i class="fa fa-leaf"></i> {:__('补打标签')}</a>
+                        <a href="javascript:;" class="btn btn-info btn-printing btn-disabled disabled {:$auth->check('product/product/print')?'':'hide'}" title="{:__('printing')}" ><i class="fa fa-leaf"></i> {:__('Printing')}</a>
                         
                         <div class="dropdown btn-group {:$auth->check('product/product/multi')?'':'hide'}">
                             <a class="btn btn-primary btn-more dropdown-toggle btn-disabled disabled" data-toggle="dropdown"><i class="fa fa-cog"></i> {:__('More')}</a>

@@ -1,0 +1,1201 @@
+---------------------------------------------------------------
+[ 2021-01-22T16:36:04+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/ajax/lang?callback=define&controllername=product.product&lang=zh-cn&v=1611304564&v=1611304564
+[运行时间：0.002780s] [吞吐率：359.72req/s] [内存消耗：407.01kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000014s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000241s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000025s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'product.product',
+  'lang' => 'zh-cn',
+  'v' => '1611304564',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000132s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000054s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000019s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000017s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:04+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/ajax/lang?callback=define&controllername=dashboard&lang=zh-cn&v=1611304564&v=1611304564
+[运行时间：0.003224s] [吞吐率：310.18req/s] [内存消耗：407.48kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000334s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000038s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'dashboard',
+  'lang' => 'zh-cn',
+  'v' => '1611304564',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000112s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000060s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000028s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/dashboard.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000018s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:04+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/ajax/lang?callback=define&controllername=index&lang=zh-cn&v=1611304564&v=1611304564
+[运行时间：0.004413s] [吞吐率：226.61req/s] [内存消耗：408.39kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000018s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000353s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000038s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'index',
+  'lang' => 'zh-cn',
+  'v' => '1611304564',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000151s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000091s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000021s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/index.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000021s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:05+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/product/product/index?addtabs=1&sort=product_id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1611304563680
+[运行时间：0.015211s] [吞吐率：65.74req/s] [内存消耗：730.28kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000256s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000026s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product.product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'product_id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1611304563680',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000067s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000099s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000036s ]
+[ info ] [ RUN ] app\admin\controller\product\Product->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/product/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000031s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:13+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/product/getproduct
+[运行时间：0.150570s] [吞吐率：6.64req/s] [内存消耗：684.74kb] [文件加载：143]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000014s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000290s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000037s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.product',
+    2 => 'getproduct',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '187',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'product',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'product',
+  'keyField' => 'product',
+  'searchField' => 
+  array (
+    0 => 'product',
+  ),
+  'product' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000137s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000106s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/product.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000035s ]
+[ info ] [ RUN ] app\admin\controller\base\Product->getproduct[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/base/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.138014s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:15+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/product/getweight?product=%E7%93%A6%E6%A5%9E%E7%BA%B8
+[运行时间：0.111425s] [吞吐率：8.97req/s] [内存消耗：689.21kb] [文件加载：143]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000014s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000280s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000038s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.product',
+    2 => 'getweight',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '222',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'product' => '瓦楞纸',
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'product_weight',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'product_weight',
+  'keyField' => 'product_weight',
+  'searchField' => 
+  array (
+    0 => 'product_weight',
+  ),
+  'product_weight' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000076s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000067s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/product.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000024s ]
+[ info ] [ RUN ] app\admin\controller\base\Product->getweight[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/base/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.100446s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:16+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/grade/index
+[运行时间：0.010759s] [吞吐率：92.94req/s] [内存消耗：619.64kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000020s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000343s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000050s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.grade',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '177',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'grade',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'grade',
+  'keyField' => 'grade',
+  'searchField' => 
+  array (
+    0 => 'grade',
+  ),
+  'grade' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000117s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000117s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/grade.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000044s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000070s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:18+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/quality/index
+[运行时间：0.013316s] [吞吐率：75.10req/s] [内存消耗：696.04kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000299s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000038s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.quality',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '187',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'quality',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'quality',
+  'keyField' => 'quality',
+  'searchField' => 
+  array (
+    0 => 'quality',
+  ),
+  'quality' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000081s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000080s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/quality.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000022s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000086s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:19+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/quality/index
+[运行时间：0.011990s] [吞吐率：83.40req/s] [内存消耗：696.04kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000295s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000032s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.quality',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '187',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'quality',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'quality',
+  'keyField' => 'quality',
+  'searchField' => 
+  array (
+    0 => 'quality',
+  ),
+  'quality' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000074s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000069s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/quality.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000023s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000071s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:20+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/specs/index
+[运行时间：0.009899s] [吞吐率：101.02req/s] [内存消耗：619.53kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000263s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000027s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.specs',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '177',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'specs',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'specs',
+  'keyField' => 'specs',
+  'searchField' => 
+  array (
+    0 => 'specs',
+  ),
+  'specs' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000067s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000054s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/specs.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000021s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000078s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:41+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/base/storage/index
+[运行时间：0.011633s] [吞吐率：85.96req/s] [内存消耗：619.87kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000289s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000036s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'base.storage',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '187',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'storage',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'storage',
+  'keyField' => 'storage',
+  'searchField' => 
+  array (
+    0 => 'storage',
+  ),
+  'storage' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000086s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000073s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/base/storage.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000025s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000134s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:43+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/setting/group/index
+[运行时间：0.009484s] [吞吐率：105.44req/s] [内存消耗：619.77kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000261s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000027s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setting.group',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '177',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'group',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'group',
+  'keyField' => 'group',
+  'searchField' => 
+  array (
+    0 => 'group',
+  ),
+  'group' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000112s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000111s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/setting/group.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000030s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000071s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:44+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/setting/machine/index
+[运行时间：0.010305s] [吞吐率：97.04req/s] [内存消耗：619.71kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000022s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000479s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000046s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setting.machine',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '187',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'machine',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'machine',
+  'keyField' => 'machine',
+  'searchField' => 
+  array (
+    0 => 'machine',
+  ),
+  'machine' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000086s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000062s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/setting/machine.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000026s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000086s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:36:46+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/setting/person/index
+[运行时间：0.009828s] [吞吐率：101.75req/s] [内存消耗：620.58kb] [文件加载：140]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000017s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000284s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000029s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'setting.person',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '182',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'q_word' => 
+  array (
+    0 => '',
+  ),
+  'pageNumber' => '1',
+  'pageSize' => '10',
+  'andOr' => 'OR ',
+  'orderBy' => 
+  array (
+    0 => 
+    array (
+      0 => 'person',
+      1 => 'ASC',
+    ),
+  ),
+  'searchTable' => 'tbl',
+  'showField' => 'person',
+  'keyField' => 'person',
+  'searchField' => 
+  array (
+    0 => 'person',
+  ),
+  'person' => '',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000073s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000057s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/setting/person.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000023s ]
+[ info ] [ RUN ] app\common\controller\Backend->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/library/traits/Backend.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000141s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:37:08+08:00 ] 192.168.0.102 POST 192.168.0.106:9003/OGmYigZKNJ.php/product/product/index
+[运行时间：0.109088s] [吞吐率：9.17req/s] [内存消耗：683.77kb] [文件加载：141]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000483s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000064s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product.product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'origin' => 'http://192.168.0.106:9003',
+  'content-type' => 'application/x-www-form-urlencoded; charset=UTF-8',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'content-length' => '1154',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+)
+[ info ] [ PARAM ] array (
+  'row' => 
+  array (
+    'product_name' => '瓦楞纸',
+    'product_productweight' => '180克',
+    'product_grade' => '一级品',
+    'product_quality' => '全新纸',
+    'product_specs' => '1200mm',
+    'product_unit' => 'kg',
+    'product_weight' => '1050',
+    'product_diameter' => '1200mm',
+    'product_broken' => '1',
+    'product_mother_code' => 'A569825',
+    'product_storage' => '主仓库',
+    'product_product_datetime' => '2021-1-22 16:37:7',
+    'product_inbound_datetime' => '2021-1-22 16:37:7',
+    'product_group' => '甲班',
+    'product_machine' => '一号机组',
+    'product_QC' => '张三',
+  ),
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000138s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000081s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000022s ]
+[ info ] [ RUN ] app\admin\controller\product\Product->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/product/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000140s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:37:08+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/product/product/printingone?product_id=29&dialog=1
+[运行时间：0.010135s] [吞吐率：98.67req/s] [内存消耗：611.48kb] [文件加载：139]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000290s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000028s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product.product',
+    2 => 'printingone',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'upgrade-insecure-requests' => '1',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'product_id' => '29',
+  'dialog' => '1',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000081s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000057s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000023s ]
+[ info ] [ RUN ] app\admin\controller\product\Product->printingone[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/product/Product.php ]
+[ info ] [ VIEW ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/product/product/printing.html [ array (
+  0 => 'breadcrumb',
+  1 => 'site',
+  2 => 'config',
+  3 => 'auth',
+  4 => 'admin',
+  5 => 'productStatusList',
+  6 => 'row',
+) ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000023s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:37:08+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/product/product/index?addtabs=1&sort=product_id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1611304563681
+[运行时间：0.031288s] [吞吐率：31.96req/s] [内存消耗：730.27kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.017115s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000038s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product.product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'product_id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1611304563681',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000076s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000081s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000020s ]
+[ info ] [ RUN ] app\admin\controller\product\Product->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/product/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000192s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:37:09+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/ajax/lang?callback=define&controllername=product.product&lang=zh-cn&v=1611304628&v=1611304628
+[运行时间：0.003157s] [吞吐率：316.74req/s] [内存消耗：407.10kb] [文件加载：133]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000016s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000290s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000040s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'ajax',
+    2 => 'lang',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'accept' => '*/*',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+  'content-type' => '',
+)
+[ info ] [ PARAM ] array (
+  'callback' => 'define',
+  'controllername' => 'product.product',
+  'lang' => 'zh-cn',
+  'v' => '1611304628',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000162s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000064s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/ajax.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000022s ]
+[ info ] [ RUN ] app\admin\controller\Ajax->lang[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/Ajax.php ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000020s ]
+[ info ] [ LOG ] INIT File
+---------------------------------------------------------------
+[ 2021-01-22T16:37:27+08:00 ] 192.168.0.102 GET 192.168.0.106:9003/OGmYigZKNJ.php/product/product/index?addtabs=1&sort=product_id&order=desc&offset=0&limit=10&filter=%7B%7D&op=%7B%7D&_=1611304563682
+[运行时间：0.016433s] [吞吐率：60.85req/s] [内存消耗：730.27kb] [文件加载：142]
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000015s ]
+[ info ] [ CACHE ] INIT File
+[ info ] [ BEHAVIOR ] Run Closure @app_init [ RunTime:0.000286s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/thinkphp/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @app_dispatch [ RunTime:0.000035s ]
+[ info ] [ ROUTE ] array (
+  'type' => 'module',
+  'module' => 
+  array (
+    0 => 'admin',
+    1 => 'product.product',
+    2 => 'index',
+  ),
+)
+[ info ] [ HEADER ] array (
+  'cookie' => 'PHPSESSID=lrbrpmo0o369gs7lqpkpe7t9ig; think_var=zh-cn',
+  'accept-language' => 'zh-CN,zh;q=0.9',
+  'accept-encoding' => 'gzip, deflate',
+  'content-type' => 'application/json',
+  'user-agent' => 'Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.141 Safari/537.36',
+  'x-requested-with' => 'XMLHttpRequest',
+  'accept' => 'application/json, text/javascript, */*; q=0.01',
+  'connection' => 'keep-alive',
+  'host' => '192.168.0.106:9003',
+  'content-length' => '',
+)
+[ info ] [ PARAM ] array (
+  'addtabs' => '1',
+  'sort' => 'product_id',
+  'order' => 'desc',
+  'offset' => '0',
+  'limit' => '10',
+  'filter' => '{}',
+  'op' => '{}',
+  '_' => '1611304563682',
+)
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn.php
+[ info ] [ BEHAVIOR ] Run app\common\behavior\Common @module_init [ RunTime:0.000087s ]
+[ info ] [ SESSION ] INIT array (
+  'id' => '',
+  'var_session_id' => '',
+  'prefix' => 'think',
+  'type' => '',
+  'auto_start' => true,
+)
+[ info ] [ DB ] INIT mysql
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @config_init [ RunTime:0.000119s ]
+[ info ] [ LANG ] /media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/lang/zh-cn/product/product.php
+[ info ] [ BEHAVIOR ] Run \addons\geetest\Geetest @action_begin [ RunTime:0.000027s ]
+[ info ] [ RUN ] app\admin\controller\product\Product->index[ /media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/controller/product/Product.php ]
+[ info ] [ BEHAVIOR ] Run app\admin\behavior\AdminLog @app_end [ RunTime:0.000042s ]
+[ info ] [ LOG ] INIT File
