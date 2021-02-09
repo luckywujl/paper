@@ -1,0 +1,94 @@
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_sale_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_sale_id" data-rule="required" data-source="detail/sale/index" class="form-control selectpage" name="row[detail_sale_id]" type="text" value="{$row.detail_sale_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_no')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_no" class="form-control" name="row[detail_no]" type="number" value="{$row.detail_no|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_product_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_product_id" data-rule="required" data-source="detail/product/index" class="form-control selectpage" name="row[detail_product_id]" type="text" value="{$row.detail_product_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_product_name')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_product_name" class="form-control" name="row[detail_product_name]" type="text" value="{$row.detail_product_name|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_product_productweight')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_product_productweight" class="form-control" name="row[detail_product_productweight]" type="text" value="{$row.detail_product_productweight|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_specs')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_specs" class="form-control" name="row[detail_specs]" type="text" value="{$row.detail_specs|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_unit')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_unit" class="form-control" name="row[detail_unit]" type="text" value="{$row.detail_unit|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_price')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_price" class="form-control" name="row[detail_price]" type="number" value="{$row.detail_price|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_weight')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_weight" class="form-control" name="row[detail_weight]" type="number" value="{$row.detail_weight|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_number')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_number" class="form-control" name="row[detail_number]" type="number" value="{$row.detail_number|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_amount')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-detail_amount" class="form-control" name="row[detail_amount]" type="number" value="{$row.detail_amount|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_detail')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-detail_detail" class="form-control " rows="5" name="row[detail_detail]" cols="50">{$row.detail_detail|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_remark')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <textarea id="c-detail_remark" class="form-control " rows="5" name="row[detail_remark]" cols="50">{$row.detail_remark|htmlentities}</textarea>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-2">{:__('Company_id')}:</label>
+        <div class="col-xs-12 col-sm-8">
+            <input id="c-company_id" data-rule="required" data-source="company/index" class="form-control selectpage" name="row[company_id]" type="text" value="{$row.company_id|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="submit" class="btn btn-success btn-embossed disabled">{:__('OK')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+        </div>
+    </div>
+</form>

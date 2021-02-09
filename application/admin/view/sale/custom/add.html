@@ -1,9 +1,9 @@
 <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Custom')}:</label>
+        <label class="control-label col-xs-12 col-sm-2">{:__('Custom_name')}:</label>
         <div class="col-xs-12 col-sm-8">
-            <input id="c-custom" class="form-control" name="row[custom]" type="text">
+            <input id="c-custom_name" class="form-control" name="row[custom_name]" type="text">
         </div>
     </div>
     <div class="form-group">
@@ -30,12 +30,7 @@
             <input id="c-custom_mem" class="form-control" name="row[custom_mem]" type="text">
         </div>
     </div>
-    <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Company_id')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-company_id" data-rule="required" data-source="company/index" class="form-control selectpage" name="row[company_id]" type="text" value="">
-        </div>
-    </div>
+    
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

@@ -1,0 +1,114 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+    <div class="panel-body">
+    <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_code')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_code" class="form-control "   name="row[sale_code]" type="text" value="{$row.sale_code|htmlentities}">
+        </div>
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_datetime')}:</label>
+        <div class="col-xs-12 col-sm-2">
+           </div>
+    
+        <div class="col-xs-12 col-sm-2" hidden="hidden">
+            <input id="c-sale_custom_name"   class="form-control " name="row[sale_custom_name]" type="text" value="{$row.sale_custom_name|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_name')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_id" data-rule="required"   class="form-control" name="row[sale_custom_id]" type="text" value="{$row.sale_custom_id|htmlentities}">
+        </div>
+        
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_contact')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_contact" class="form-control" name="row[sale_custom_contact]" type="text" value="{$row.sale_custom_contact|htmlentities}">
+        </div>
+        
+        
+        
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_tel')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_tel" class="form-control" name="row[sale_custom_tel]" type="text" value="{$row.sale_custom_tel|htmlentities}">
+        </div>
+        
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_address')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_address" class="form-control" name="row[sale_custom_address]" type="text" value="{$row.sale_custom_address|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_number')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_number" class="form-control" name="row[sale_number]" type="number" value="{$row.sale_number|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_weight')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_weight" class="form-control" name="row[sale_weight]" type="number" value="{$row.sale_weight|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_price')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_price" class="form-control" name="row[sale_price]" type="number" value="{$row.sale_price|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_amount')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_amount" class="form-control" name="row[sale_amount]" type="number" value="{$row.sale_amount|htmlentities}">
+        </div>
+   
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_person')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_person" data-source="setting/person/index" data-field="person" data-primary-key="person" class="form-control selectpage" name="row[sale_person]" type="text" value="{$row.sale_person|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_remark')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <textarea id="c-sale_remark" class="form-control " rows="1" name="row[sale_remark]" cols="50">{$row.sale_remark|htmlentities}</textarea>
+        </div>
+    </div>
+    
+    
+    
+   
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-2"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="button" class="btn btn-info btn-embossed btn-new">{:__('新建')}</button>
+            <button type="button" class="btn btn-success btn-embossed btn-save">{:__('暂存')}</button>  
+            <button type="button" class="btn btn-success btn-embossed btn-savedraft">{:__('保存草稿')}</button>
+            <button type="reset" class="btn btn-default btn-embossed">{:__('Reset')}</button>
+            <button type="button" class="btn btn-success btn-embossed btn-verify">{:__('审核过账')}</button>
+            <button type="button" class="btn btn-info btn-embossed btn-open">{:__('打开草稿')}</button>
+        </div>
+    </div>
+</form>
+
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
+                        <a href="javascript:;" class="btn btn-success btn-input {:$auth->check('sale/detaillist/input')?'':'hide'}" title="{:__('Input')}" ><i class="fa fa-plus"></i> {:__('input')}</a>
+                        <a href="javascript:;" class="btn btn-danger btn-back btn-disabled disabled {:$auth->check('sale/detaillist/del')?'':'hide'}" title="{:__('Delete')}" ><i class="fa fa-trash"></i> {:__('Delete')}</a>
+                        <a href="javascript:;" class="btn btn-success btn-allinput {:$auth->check('sale/detaillist/allinput')?'':'hide'}" title="{:__('Allinput')}" ><i class="fa fa-plus"></i> {:__('allinput')}</a>
+                        
+                       
+                        
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
+                           data-operate-edit="{:$auth->check('sale/detaillist/edit')}" 
+                           data-operate-del="{:$auth->check('sale/detaillist/del')}" 
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>

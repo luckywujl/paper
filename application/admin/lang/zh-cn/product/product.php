@@ -28,6 +28,7 @@ return [
     'Product_status 0'         => '生产',
     'Product_status 1'         => '入库',
     'Product_status 2'         => '销售中',
-    'Product_status 3'         => '已售',
+    'Product_status 3'         => '开单中',
+    'Product_status 4'         => '已售',
     'Company_id'               => '数据归属'
 ];

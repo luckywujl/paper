@@ -541,7 +541,7 @@ class Backend extends Controller
                 $primaryvalue = array_unique(is_array($primaryvalue) ? $primaryvalue : explode(',', $primaryvalue));
                 $primaryvalue = implode(',', $primaryvalue);
 
-                $this->model->orderRaw("FIELD(`{$primarykey}`, {$primaryvalue})");
+                $this->model->orderRaw("FIELD(`{$primarykey}`, '{$primaryvalue}')");
             } else {
                 $this->model->order($order);
             }
