@@ -44,4 +44,5 @@ return [
     'Company_id'               => '数据归属',
     
     'input'   						 => '扫码',
+    'allinput'						 => '批量导入'
 ];

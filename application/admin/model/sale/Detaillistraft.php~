@@ -13,7 +13,7 @@ class Detaillistraft extends Model
     
 
     // 表名
-    protected $name = 'sale_detail_temp';
+    protected $name = 'sale_detail';
     
     // 自动写入时间戳字段
     protected $autoWriteTimestamp = false;

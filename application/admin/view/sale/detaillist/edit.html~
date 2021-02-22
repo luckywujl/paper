@@ -1,7 +1,7 @@
 <form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     
-    <div class="form-group" hidden="hidden">
+    <div class="form-group">
     <input id="c-detail_sale_id" readonly="readonly" class="form-control" name="row[detail_sale_id]" type="number" value="{$row.detail_sale_id	|htmlentities}">
      <input id="c-detail_id" readonly="readonly" class="form-control" name="row[detail_id]" type="number" value="{$row.detail_id	|htmlentities}">
        

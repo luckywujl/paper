@@ -52,7 +52,7 @@ class Product extends Backend
                 if ($this->dataLimit && $this->dataLimitFieldAutoFill) {
                     $params[$this->dataLimitField] = $this->auth->company_id;
                 }
-                //确定单号
+                //确定产品编号
                 $main = $this->model
                 ->where('product_product_datetime','between time',[date('Y-m-d 00:00:01'),date('Y-m-d 23:59:59')])
                 ->where('company_id',$this->auth->company_id)
@@ -68,6 +68,7 @@ class Product extends Backend
                   $params['product_code'] = date('Ymd').'0001';
                 }
                 $params['product_operator']=$this->auth->nickname;//添加当前操作员信息
+                $params['product_status']=1;//直接入库，如果需要增加入库流程，在此处修改为0
                 $result = false;
                 Db::startTrans();
                 try {

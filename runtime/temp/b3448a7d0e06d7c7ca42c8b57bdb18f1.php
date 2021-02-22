@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/sale/detaillist/index.html";i:1612086882;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:4:{s:114:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/public/../application/admin/view/sale/detaillist/index.html";i:1614014520;s:97:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/layout/default.html";i:1602168706;s:94:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/meta.html";i:1602168706;s:96:"/media/luckywujl/data/www/admin/localhost_9003/wwwroot/application/admin/view/common/script.html";i:1602168706;}*/ ?>
 <!DOCTYPE html>
 <html lang="<?php echo $config['language']; ?>">
     <head>
@@ -65,6 +65,9 @@
     <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
     <div class="form-group">
+        <div class="col-xs-12 col-sm-2"  hidden="hidden">
+            <input id="c-sale_id" class="form-control "   name="row[sale_id]" type="text" value="<?php echo htmlentities($row['sale_id']); ?>">
+        </div>
         <label class="control-label col-xs-12 col-sm-1"><?php echo __('Sale_code'); ?>:</label>
         <div class="col-xs-12 col-sm-2">
             <input id="c-sale_code" class="form-control "   name="row[sale_code]" type="text" value="<?php echo htmlentities($row['sale_code']); ?>">
@@ -104,12 +107,12 @@
     
         <label class="control-label col-xs-12 col-sm-1"><?php echo __('Sale_number'); ?>:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-sale_number" class="form-control" name="row[sale_number]" type="number" value="<?php echo htmlentities($row['sale_number']); ?>">
+            <input id="c-sale_number" readonly="readonly" class="form-control" name="row[sale_number]" type="number" value="<?php echo htmlentities($row['sale_number']); ?>">
         </div>
     
         <label class="control-label col-xs-12 col-sm-1"><?php echo __('Sale_weight'); ?>:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-sale_weight" class="form-control" name="row[sale_weight]" type="number" value="<?php echo htmlentities($row['sale_weight']); ?>">
+            <input id="c-sale_weight" readonly="readonly" class="form-control" name="row[sale_weight]" type="number" value="<?php echo htmlentities($row['sale_weight']); ?>">
         </div>
     </div>
     <div class="form-group">
@@ -120,7 +123,7 @@
     
         <label class="control-label col-xs-12 col-sm-1"><?php echo __('Sale_amount'); ?>:</label>
         <div class="col-xs-12 col-sm-2">
-            <input id="c-sale_amount" class="form-control" name="row[sale_amount]" type="number" value="<?php echo htmlentities($row['sale_amount']); ?>">
+            <input id="c-sale_amount" readonly="readonly" class="form-control" name="row[sale_amount]" type="number" value="<?php echo htmlentities($row['sale_amount']); ?>">
         </div>
    
         <label class="control-label col-xs-12 col-sm-1"><?php echo __('Sale_person'); ?>:</label>
@@ -140,9 +143,9 @@
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">
-            <button type="button" class="btn btn-info btn-embossed btn-new"><?php echo __('新建'); ?></button>
+            <button type="button" id="new"  class="btn btn-info btn-embossed btn-new"><?php echo __('新建'); ?></button>
             <button type="button" class="btn btn-success btn-embossed btn-save"><?php echo __('暂存'); ?></button>  
-            <button type="button" class="btn btn-success btn-embossed btn-savedraft"><?php echo __('保存草稿'); ?></button>
+            <button type="button" id="save"  class="btn btn-success btn-embossed btn-savedraft"><?php echo __('保存草稿'); ?></button>
             <button type="reset" class="btn btn-default btn-embossed"><?php echo __('Reset'); ?></button>
             <button type="button" class="btn btn-success btn-embossed btn-verify"><?php echo __('审核过账'); ?></button>
             <button type="button" class="btn btn-info btn-embossed btn-open"><?php echo __('打开草稿'); ?></button>
@@ -156,7 +159,7 @@
                     <div id="toolbar" class="toolbar">
                         <a href="javascript:;" class="btn btn-primary btn-refresh" title="<?php echo __('Refresh'); ?>" ><i class="fa fa-refresh"></i> </a>
                         <a href="javascript:;" class="btn btn-success btn-input <?php echo $auth->check('sale/detaillist/input')?'':'hide'; ?>" title="<?php echo __('Input'); ?>" ><i class="fa fa-plus"></i> <?php echo __('input'); ?></a>
-                        <a href="javascript:;" class="btn btn-danger btn-back btn-disabled disabled <?php echo $auth->check('sale/detaillist/del')?'':'hide'; ?>" title="<?php echo __('Delete'); ?>" ><i class="fa fa-trash"></i> <?php echo __('Delete'); ?></a>
+                        <a href="javascript:;" class="btn btn-danger btn-del btn-disabled disabled <?php echo $auth->check('sale/detaillist/del')?'':'hide'; ?>" title="<?php echo __('Delete'); ?>" ><i class="fa fa-trash"></i> <?php echo __('Delete'); ?></a>
                         <a href="javascript:;" class="btn btn-success btn-allinput <?php echo $auth->check('sale/detaillist/allinput')?'':'hide'; ?>" title="<?php echo __('Allinput'); ?>" ><i class="fa fa-plus"></i> <?php echo __('allinput'); ?></a>
                         
                        

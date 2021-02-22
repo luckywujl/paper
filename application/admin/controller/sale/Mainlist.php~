@@ -17,7 +17,7 @@ class Mainlist extends Backend
      * @var \app\admin\model\sale\Mainlist
      */
     protected $model = null;
- 
+    protected $autoWriteTimestamp = false;
 
     public function _initialize()
     {

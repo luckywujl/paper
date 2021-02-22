@@ -7,6 +7,8 @@ return [
     'Detail_product_id'            => '产品ID',
     'Detail_product_name'          => '产品名称',
     'Detail_product_productweight' => '克重',
+    'Detail_grade'                 => '产品等级',
+    'Detail_quality'                 => '产品品质',
     'Detail_specs'                 => '规格',
     'Detail_unit'                  => '单位',
     'Detail_price'                 => '单价',

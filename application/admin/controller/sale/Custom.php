@@ -19,7 +19,7 @@ class Custom extends Backend
     protected $model = null;
     protected $dataLimit = 'personal';
     protected $dataLimitField = 'company_id';
-    protected $noNeedRight = ['index'];
+    protected $noNeedRight = ['index','getcustominfo'];
 
     public function _initialize()
     {
