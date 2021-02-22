@@ -69,29 +69,6 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
 					
 					
 					
-					$.ajax({
-						url:"sale/detaillist/new",
-						type:'post',
-						dataType:'json',
-						
-						callback:function (data,ret) {
-						 //$("#c-sale_custom_id").val('');//清空客户ID
-						 //$("#c-sale_custom_name").val('');//清空客户名称
-						 //$("#c-sale_custom_contact").val('');//清空联系人栏
-						 //$("#c-sale_custom_address").val('');//清空客户地址栏
-						 //$("#c-sale_custom_tel").val('');//清空电话栏
-						 $("#c-sale_code").val('');
-						 $("#c-sale_number").val('0');//件数归零
-						 $("#c-sale_weight").val('0');//重量归零
-						 $("#c-sale_price").val('0.00');//单价归零
-						 $("#c-sale_amount").val('0.00');//金额归零	
-						 $("#c-sale_remark").val('');//备注清空
-						 $("#c-sale_id").val(ret.data);
-						 $("table").bootstrapTable('refresh');//刷新表格
-						},error:function (e) {
-							Backend.api.toastr.error(e.message);
-						}
-					})
 				});
       
 				//打开草稿

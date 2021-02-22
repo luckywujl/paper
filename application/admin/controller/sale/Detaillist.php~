@@ -337,7 +337,7 @@ class Detaillist extends Backend
         		->where($where)
         		->where(['sale_operator'=>$this->auth->nickname])
         		->find();
-        
+        Db::startTrans();
         	$info = [];
         	//确定单号
         	if($params['sale_code']=='') {//如果保存的数据中不包含单号，则按规则新建单号
@@ -388,7 +388,7 @@ class Detaillist extends Backend
            //保存子表至草稿
            $sale_detail_temp_info = $this->model
            		->where($where)
-           		->where('detail_sale_id',$vo['sale_id'])
+           		->where('detail_sale_id',$sale_main_temp_info['sale_id'])
            		->select();
            $details = [];
            foreach($sale_detail_temp_info as $kk=>$vv){
@@ -412,13 +412,15 @@ class Detaillist extends Backend
            }
            $resultd = $sale_detail->saveAll($details); 
            //更新产品表中的sale_code及sale_datetime
-           $product->where($where)->where('product_sale_code',$vo['sale_id'])->update(['product_sale_code'=>$info['sale_code'],'product_sale_datetime'=>time(),'product_status'=>3]);
+           $product->where($where)->where('product_sale_code',$sale_main_temp_info['sale_id'])->update(['product_sale_code'=>$info['sale_code'],'product_sale_datetime'=>time(),'product_status'=>3]);
       	  $result = false; 
       	 //保存主表至草稿
        	 $result = $sale_main->save($info); 
+       	 Db::commit();
+          $sale_code =$sale_main->sale_code;//产品库产品ID	
  
         if ($result !== false) {
-            $this->success('OK');
+            $this->success($sale_code,null,$sale_code);
          } else {
             $this->error(__('No rows were updated'));
          }

@@ -348,7 +348,26 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
         },
         api: {
             bindevent: function () {
-                Form.api.bindevent($("form[role=form]"));
+                Form.api.bindevent($("form[role=form]"),function (data,ret) {
+                  //数据保存成功后执行，清除产品重量接头数，再打印
+                  $("#c-sale_code").val(data);
+                
+                  //打印单据
+                  //Fast.api.open('product/product/printingone?product_id='+data.product_id,'打印标签',{}); 	
+                 
+                  //刷新表格
+   				  // $("#table").bootstrapTable('refresh');
+   				   }, function(data, ret){
+  						Toastr.success("失败");
+				   	}, function(success, error){
+
+					//bindevent的第三个参数为提交前的回调
+					//如果我们需要在表单提交前做一些数据处理，则可以在此方法处理
+					//注意如果我们需要阻止表单，可以在此使用return false;即可
+					//如果我们处理完成需要再次提交表单则可以使用submit提交,如下
+					//Form.api.submit(this, success, error);
+					//return false;
+                });
             }
         }
     };

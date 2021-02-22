@@ -51,9 +51,10 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         			classname: 'btn btn-xs btn-success btn-magic btn-ajax',
       							      icon: 'fa fa-magic',
                         			confirm: '确认打开草稿',
-                        			url: 'sale/saleraft/select',
+                        		//	url: 'sale/saleraft/select',
         								   success: function (data, ret) {
-             							   Layer.alert(ret.msg + ",返回数据：" + JSON.stringify(data));
+        								   	Fast.api.close({sale_code});
+             							   //Layer.alert(ret.msg + ",返回数据：" + JSON.stringify(data));
                						 //如果需要阻止成功提示，则必须使用return false;
                 						 //return false;
             							},
