@@ -10,20 +10,17 @@ class Mainlist extends Model
 
     
 
-    // 关闭自动写入update_time字段
-    protected $updateTime = false;
     
-    // 关闭自动写入时间戳功能
-    protected $autoWriteTimestamp = false;
 
     // 表名
     protected $name = 'sale_main';
     
-   
+    // 自动写入时间戳字段
+    protected $autoWriteTimestamp = false;
 
     // 定义时间戳字段名
     protected $createTime = false;
-   
+    protected $updateTime = false;
     protected $deleteTime = false;
 
     // 追加属性
@@ -38,7 +35,7 @@ class Mainlist extends Model
     
     public function getSaleStatusList()
     {
-        return ['0' => __('Sale_status 0'), '1' => __('Sale_status 1'), '2' => __('Sale_status 2'), '3' => __('Sale_status 3'), '4' => __('Sale_status 4')];
+        return ['0' => __('Sale_status 0'), '1' => __('Sale_status 1'), '2' => __('Sale_status 2'), '3' => __('Sale_status 3')];
     }
 
 

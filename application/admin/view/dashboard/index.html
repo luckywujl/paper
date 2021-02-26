@@ -164,20 +164,20 @@
         {:build_heading(null, false)}
         <ul class="nav nav-tabs">
             <li class="active"><a href="#one" data-toggle="tab">{:__('Dashboard')}</a></li>
-            <li><a href="#two" data-toggle="tab">{:__('Custom')}</a></li>
+           
         </ul>
     </div>
     <div class="panel-body">
         <div id="myTabContent" class="tab-content">
-            <div class="tab-pane fade active in" id="one">
+       
 
                 <div class="row">
                     <div class="col-sm-3 col-xs-6">
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-red"><i class="fa fa-users"></i></span>
                             <div class="sm-st-info">
-                                <span>{$totaluser}</span>
-                                {:__('Total user')}
+                                <span>{$totalnumber}</span>
+                                {:__('在库总件数')}
                             </div>
                         </div>
                     </div>
@@ -185,8 +185,8 @@
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-violet"><i class="fa fa-book"></i></span>
                             <div class="sm-st-info">
-                                <span>{$totalviews}</span>
-                                {:__('Total view')}
+                                <span>{$totalweight}</span>
+                                {:__('在库重量')}
                             </div>
                         </div>
                     </div>
@@ -194,8 +194,8 @@
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-blue"><i class="fa fa-shopping-bag"></i></span>
                             <div class="sm-st-info">
-                                <span>{$totalorder}</span>
-                                {:__('Total order')}
+                                <span>{$totalspecs}</span>
+                                {:__('在库品类')}
                             </div>
                         </div>
                     </div>
@@ -203,17 +203,15 @@
                         <div class="sm-st clearfix">
                             <span class="sm-st-icon st-green"><i class="fa fa-cny"></i></span>
                             <div class="sm-st-info">
-                                <span>{$totalorderamount}</span>
-                                {:__('Total order amount')}
+                                <span>{$totalstorage}</span>
+                                {:__('仓库数量')}
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <div class="row">
-                    <div class="col-lg-8">
-                        <div id="echart" class="btn-refresh" style="height:200px;width:100%;"></div>
-                    </div>
+                    
                     <div class="col-lg-4">
                         <div class="card sameheight-item stats">
                             <div class="card-block">
@@ -222,7 +220,7 @@
                                         <div class="stat-icon"><i class="fa fa-rocket"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayusersignup}</div>
-                                            <div class="name"> {:__('Today user signup')}</div>
+                                            <div class="name"> {:__('今日产量（件）')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 30%"></div>
@@ -232,7 +230,7 @@
                                         <div class="stat-icon"><i class="fa fa-shopping-cart"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayuserlogin}</div>
-                                            <div class="name"> {:__('Today user login')}</div>
+                                            <div class="name"> {:__('今日产量（重量）')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
@@ -242,7 +240,7 @@
                                         <div class="stat-icon"><i class="fa fa-line-chart"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$todayorder}</div>
-                                            <div class="name"> {:__('Today order')}</div>
+                                            <div class="name"> {:__('今日销售（笔）')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
@@ -252,7 +250,7 @@
                                         <div class="stat-icon"><i class="fa fa-users"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$unsettleorder}</div>
-                                            <div class="name"> {:__('Unsettle order')}</div>
+                                            <div class="name"> {:__('今日销售（重量）')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
@@ -262,21 +260,15 @@
                                         <div class="stat-icon"><i class="fa fa-list-alt"></i></div>
                                         <div class="stat">
                                             <div class="value"> {$sevendnu}</div>
-                                            <div class="name"> {:__('Seven dnu')}</div>
+                                            <div class="name"> {:__('今日销售（件）')}</div>
                                         </div>
                                         <div class="progress">
                                             <div class="progress-bar progress-bar-success" style="width: 25%"></div>
                                         </div>
                                     </div>
                                     <div class="col-xs-6 stat-col">
-                                        <div class="stat-icon"><i class="fa fa-dollar"></i></div>
-                                        <div class="stat">
-                                            <div class="value"> {$sevendau}</div>
-                                            <div class="name"> {:__('Seven dau')}</div>
-                                        </div>
-                                        <div class="progress">
-                                            <div class="progress-bar progress-bar-success" style="width: 25%"></div>
-                                        </div>
+                                        
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -284,97 +276,8 @@
                     </div>
                 </div>
 
-                <div class="row" style="margin-top:15px;" id="statistics">
-
-                    <div class="col-lg-12">
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel bg-blue-gradient no-border">
-                            <div class="panel-body">
-                                <div class="panel-title">
-                                    <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Category count')}</h5>
-                                </div>
-                                <div class="panel-content">
-                                    <h1 class="no-margins">1234</h1>
-                                    <div class="stat-percent font-bold text-gray"><i class="fa fa-commenting"></i> 1234</div>
-                                    <small>{:__('Category count tips')}</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel bg-aqua-gradient no-border">
-                            <div class="panel-body">
-                                <div class="ibox-title">
-                                    <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Attachment count')}</h5>
-                                </div>
-                                <div class="ibox-content">
-                                    <h1 class="no-margins">1043</h1>
-                                    <div class="stat-percent font-bold text-gray"><i class="fa fa-modx"></i> 2592</div>
-                                    <small>{:__('Attachment count tips')}</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel bg-purple-gradient no-border">
-                            <div class="panel-body">
-                                <div class="ibox-title">
-                                    <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('Article count')}</h5>
-                                </div>
-                                <div class="ibox-content">
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">1234</h1>
-                                            <div class="font-bold"><i class="fa fa-commenting"></i>
-                                                <small>{:__('Comment count')}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">6754</h1>
-                                            <div class="font-bold"><i class="fa fa-heart"></i>
-                                                <small>{:__('Like count')}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xs-6 col-md-3">
-                        <div class="panel bg-green-gradient no-border">
-                            <div class="panel-body">
-                                <div class="ibox-title">
-                                    <span class="label label-primary pull-right">{:__('Real time')}</span>
-                                    <h5>{:__('News count')}</h5>
-                                </div>
-                                <div class="ibox-content">
-
-                                    <div class="row">
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">5302</h1>
-                                            <div class="font-bold"><i class="fa fa-commenting"></i>
-                                                <small>{:__('Comment count')}</small>
-                                            </div>
-                                        </div>
-                                        <div class="col-md-6">
-                                            <h1 class="no-margins">8205</h1>
-                                            <div class="font-bold"><i class="fa fa-user"></i>
-                                                <small>{:__('Like count')}</small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                
+         
             <div class="tab-pane fade" id="two">
                 <div class="row">
                     <div class="col-xs-12">

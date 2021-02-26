@@ -4,16 +4,16 @@
     <div class="panel-body">
 <form id="add-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
 
-    <div class="form-group">
+    <div class="form-group" hidden="hidden">
         <label class="control-label col-xs-12 col-sm-2">{:__('Detail_sale_id')}:</label>
         <div class="col-xs-12 col-sm-8">
             <input id="c-detail_sale_id"  class="form-control" name="row[detail_sale_id]" type="text" value="{$sale_id|htmlentities}">
         </div>
     </div>
     <div class="form-group">
-        <label class="control-label col-xs-12 col-sm-2">{:__('Detail_no')}:</label>
-        <div class="col-xs-12 col-sm-8">
-            <input id="c-product_id" class="form-control" name="row[product_id]" type="number">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Product_code')}:</label>
+        <div class="col-xs-12 col-sm-12">
+            <input id="c-product_code" class="form-control" name="row[product_code]" type="number">
         </div>
     </div>
     

@@ -4,6 +4,9 @@ namespace app\admin\controller;
 
 use app\common\controller\Backend;
 use think\Config;
+use app\admin\model\sale as sale;
+use app\admin\model\product as product;
+use app\admin\model\base as base;
 
 /**
  * 控制台
@@ -19,6 +22,7 @@ class Dashboard extends Backend
      */
     public function index()
     {
+        
         $seventtime = \fast\Date::unixtime('day', -7);
         $paylist = $createlist = [];
         for ($i = 0; $i < 7; $i++)
@@ -33,16 +37,50 @@ class Dashboard extends Backend
         Config::parse($addonComposerCfg, "json", "composer");
         $config = Config::get("composer");
         $addonVersion = isset($config['version']) ? $config['version'] : __('Unknown');
+        $product = new product\Product();
+        $storage = new base\Storage();
+        $sale = new sale\Mainlist();
+        $product_info = $product
+        							->field('count(*) as product_number,sum(product_weight) as product_weight')
+        							->where(['company_id'=>$this->auth->company_id,'product_status'=>1])
+        							->select();
+        $product_number = $product_info[0]['product_number'];		
+        $product_weight = $product_info[0]['product_weight'];
+        $product_info = $product
+        							->field('count(*) as product_specsnumber')
+        							->where(['company_id'=>$this->auth->company_id,'product_status'=>1])
+        							->group('product_name,product_productweight,product_grade,product_quality,product_specs,product_unit')
+        							->count();
+        $product_specs = $product_info;
+        $storage_info = $storage
+        							->where(['company_id'=>$this->auth->company_id])
+        							->count();
+        $storage_number = $storage_info;
+        $product_product = $product
+                            ->field('count(*) as number,sum(product_weight) as weight')
+                            ->where(['company_id'=>$this->auth->company_id])
+                            ->where('product_product_datetime','between time',[date('Y-m-d 00:00:01'),date('Y-m-d 23:59:59')])
+                            ->select();
+        $product_product_number = $product_product[0]['number'];
+        $product_product_weight = $product_product[0]['weight'];
+        $main_info = $sale
+        						->field('count(*) as number1,sum(sale_weight) as weight,sum(sale_number) as number')
+                        ->where(['company_id'=>$this->auth->company_id])
+                        ->where('sale_datetime','between time',[date('Y-m-d 00:00:01'),date('Y-m-d 23:59:59')])
+                        ->select();
+        $sale_number1 = $main_info[0]['number1'];
+        $sale_number = $main_info[0]['number'];
+        $sale_weight = $main_info[0]['weight'];               
         $this->view->assign([
-            'totaluser'        => 35200,
-            'totalviews'       => 219390,
-            'totalorder'       => 32143,
-            'totalorderamount' => 174800,
-            'todayuserlogin'   => 321,
-            'todayusersignup'  => 430,
-            'todayorder'       => 2324,
-            'unsettleorder'    => 132,
-            'sevendnu'         => '80%',
+            'totalnumber'       => $product_number,
+            'totalweight'       => $product_weight,
+            'totalspecs'        => $product_specs,
+            'totalstorage' => $storage_number,
+            'todayuserlogin'   => $product_product_weight,
+            'todayusersignup'  => $product_product_number,
+            'todayorder'       => $sale_number1,
+            'unsettleorder'    => $sale_weight,
+            'sevendnu'         => $sale_number,
             'sevendau'         => '32%',
             'paylist'          => $paylist,
             'createlist'       => $createlist,

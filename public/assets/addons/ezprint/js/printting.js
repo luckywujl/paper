@@ -1,12 +1,10 @@
 define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table', 'bootstrap-table-lang', 'bootstrap-table-export', 'bootstrap-table-commonsearch', 'bootstrap-table-template'], function ($, undefined, Moment) {
     var Printing = {
-    	  
         defaults:{
             url:'ezprint/printing/get'
         },
         config:{},
         api:{
-        
             printTemplate:function(obj){
                 var source = obj;
                 var templateCode = obj.templateCode;
@@ -23,7 +21,7 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                 '</style>' +
                 '<style type="text/css" media="all">' +
                 'table{border-collapse: collapse; font-size: 12px; }\n' +
-                'table, th, td {border: 1px solid grey}\n' +
+                'table, th, td {border: 1px solid black}\n' +
                 'th, td {text-align: center; vertical-align: middle;}\n' +
                 'p {margin-left:20px; }\n' +
                 'th {height:30px; }\n' +
@@ -54,8 +52,6 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                                 copy[i].replaceWith(firstChild);
                             }
                         }
-                        
-                        
                         //获取所有的列表
                         var tableList=newWin.document.querySelectorAll('table[data-type=dataSource]');
                         var tableListLenth=tableList.length;
@@ -89,8 +85,6 @@ define(['jquery', 'bootstrap', 'moment', 'moment/locale/zh-cn', 'bootstrap-table
                             tableContent+='</tbody></table>';
                             tableListLenthCopy[i].innerHTML=tableContent;
                         }
-                        
-                       
                         newWin.print();
                         newWin.close();
                     }

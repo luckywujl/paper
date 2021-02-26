@@ -20,6 +20,7 @@ class Quality extends Backend
     protected $searchFields = 'quality';
     protected $dataLimit = 'personal';
     protected $dataLimitField = 'company_id';
+    protected $noNeedRight = ['index'];
 
     public function _initialize()
     {

@@ -17,6 +17,9 @@ class Quality extends Backend
      * @var \app\admin\model\base\Quality
      */
     protected $model = null;
+    protected $searchFields = 'quality';
+    protected $dataLimit = 'personal';
+    protected $dataLimitField = 'company_id';
 
     public function _initialize()
     {

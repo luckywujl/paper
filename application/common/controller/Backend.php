@@ -441,7 +441,7 @@ class Backend extends Controller
         }
         $adminIds = [];
         if (in_array($this->dataLimit, ['auth', 'personal'])) {
-            $adminIds = $this->dataLimit == 'auth' ? $this->auth->getChildrenAdminIds(true) : [$this->auth->id];
+            $adminIds = $this->dataLimit == 'auth' ? $this->auth->getChildrenAdminIds(true) : [$this->auth->company_id];
         }
         return $adminIds;
     }

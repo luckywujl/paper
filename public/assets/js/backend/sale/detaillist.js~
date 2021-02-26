@@ -1,4 +1,4 @@
-define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], function ($, undefined, Backend, Table, Form) {
+define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing','selectpage'], function ($, undefined, Backend, Table, Form, Printing) {
 
     var Controller = {
         index: function () {
@@ -9,12 +9,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
         	  })
         	
         	//定时读更新时间
-				setInterval(function(){
+				//setInterval(function(){
   				 //更新页面时间
-  				 var myDate = new Date();
-  				 $("#c-sale_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
-				 $("#c-sale_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
-				}, 1000);
+  				 //var myDate = new Date();
+  				// $("#c-sale_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				 //$("#c-sale_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+				//}, 1000);
 				
 				
 				
@@ -76,7 +76,26 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
 					Fast.api.open('sale/saledraft/index','打开草稿',{
 						area:['90%', '90%'],
 					 	callback:function (data) {
-					 		alert(data);
+					 		//无刷新更新页面，填写各项数据后刷新下面的表格
+					 		$("#c-sale_code").val(data.sale_code);
+					 		//$("#c-sale_datetime").val(data.sale_datetime);
+					 		var myDate = new Date(data.sale_datetime*1000);
+  		    				$("#c-sale_datetime").val(myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
+							$("#c-sale_custom_name").val(data.sale_custom_name);
+							$("#c-sale_custom_id").val(data.sale_custom_id);
+							$("#c-sale_custom_id").selectPageRefresh();
+							$("#c-sale_custom_contact").val(data.sale_custom_contact);
+							$("#c-sale_custom_address").val(data.sale_custom_address);
+							$("#c-sale_custom_tel").val(data.sale_custom_tel);
+							$("#c-sale_number").val(data.sale_number);
+							$("#c-sale_weight").val(data.sale_weight);
+							$("#c-sale_price").val(data.sale_price);
+							$("#c-sale_amount").val(data.sale_amount);
+							$("#c-sale_person").val(data.sale_person);
+							$("#c-sale_person").selectPageRefresh();
+							$("#c-sale_remark").val(data.sale_remark);
+					 		$("table").bootstrapTable('refresh');//刷新表格
+					 		//alert(data.sale_custom_name);
 				   	}
 					});
 				});
@@ -119,13 +138,113 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
 				// 保存草稿
 				$(document).on("click",".btn-savedraft",function () {
 					if ($("#c-sale_number").val()=='0') {
-						alert('请添加产品明细，再保存！');
+					  Layer.alert('请添加产品明细，再保存！');
 					  return false;
 					}else {
 					$("#add-form").attr("action","sale/detaillist/savedraft").submit();
 					}		
 				});
-				
+				// 审核过账
+				$(document).on("click",".btn-verify",function () {
+					if ($("#c-sale_number").val()=='0') {
+						Layer.alert('请添加产品明细，再保存！');
+					  return false;
+					}else {
+					$("#add-form").attr("action","sale/detaillist/verify").submit();
+					}		
+				});
+				//打印
+				$(document).on("click",".btn-printing",function () {
+					var sale_code = $("#c-sale_code").val();
+					if (!sale_code==''){
+						$.ajax({
+                        url: "sale/detaillist/printing",
+                        type: 'post',
+                        dataType: 'json',
+                        data: {sale_code:$("#c-sale_code").val()},
+                        success: function (ret) {
+                            var options ={
+                                templateCode:'FSFHD',
+                                data:ret.data,
+                                list:ret.list
+                            };
+                            Printing.api.printTemplate(options);
+                            return false;
+                        }, error: function (e) {
+                            Backend.api.toastr.error(e.message);
+                        }
+                    });	
+					}else {
+						Layer.alert('请先保存，再打印！');
+					}
+					
+			   	});
+			   	// PDA导入
+				  $(document).on("click",".btn-allinput",function () {
+				   	var sale_id = $("#c-sale_id").val();
+						var sale_code = $("#c-sale_code").val();
+						var key ='';
+						if (sale_code=='') {
+							key = sale_id;
+							}else{
+							key = sale_code;
+							}
+					Fast.api.open('sale/detaillist/allinput?sale_id='+sale_id+'&key='+key,'PDA导入',{
+						area:['90%', '90%'],
+						callback:function (data) {
+					 	//	alert(data);
+					 	//	$("#c-sale_code").val(data);
+					 		Fast.api.ajax({
+        	  		 		url:'sale/detaillist/detailtotal',
+        	  				data:{key:data,sale_id:sale_id}
+        	  				},function (data,ret) {
+        	  					$("#c-sale_amount").val(data[0]['amount']);
+        	  					$("#c-sale_number").val(data[0]['number']);
+        	  					$("#c-sale_weight").val(data[0]['weight']);
+        	  					$("#c-sale_price").val((data[0]['amount']/data[0]['weight']).toFixed(2));
+        	  					//对总表进行汇总，求总件数，总重量，总金额，倒算单价
+        	  					
+        	  					$("table").bootstrapTable('refresh');//刷新表格
+        	  					return false;
+        	  				},function (data) {
+        	  					$("table").bootstrapTable('refresh');//刷新表格
+        	  		 			return false;
+        	  				});
+				   	}
+					});
+			   	});
+			   	//清空
+			   $(document).on("click",".btn-delall",function () {
+			   	   var sale_id = $("#c-sale_id").val();
+						var sale_code = $("#c-sale_code").val();
+						var key ='';
+						if (sale_code=='') {
+							key = sale_id;
+							}else{
+							key = sale_code;
+							}
+			   	layer.confirm('确定清空所有明细数据?', {btn: ['是','否'] },
+			   	function(index){
+        				layer.close(index);
+          			$.ajax({
+                        url: "sale/detaillist/delall",
+                        type: 'post',
+                        dataType: 'json',
+                        data: {sale_code:key,sale_id:sale_id},
+                        success: function (ret) {
+                           Layer.alert(ret.msg);
+                           $(".btn-refresh").trigger('click');//刷新表格
+                        }, error: function (e) {
+                            Backend.api.toastr.error(e.message);
+                        }
+                    });				  
+       			 },
+        			function(index){
+           		 	layer.close(index);
+        			}
+			   	);
+            });
+
         	Controller.api.bindevent();
             // 初始化表格参数配置
             Table.api.init({
@@ -185,6 +304,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
                         			title:'修改',
                         			classname: 'btn btn-xs btn-primary btn-dialog',
       							      icon: 'fa fa fa-pencil',
+      							      area:['90%','90%'],
                         			//confirm: '确认打开草稿',
                         			url: 'sale/detaillist/edit?detail_id={detail_id}',
                         			callback: function (data, ret) {
@@ -220,7 +340,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
                         			classname: 'btn btn-xs btn-danger btn-magic btn-ajax',
       							      icon: 'fa fa-trash',
                         			confirm: '确定要删除这一行吗？',
-                        			url: 'sale/detaillist/del?sale_id='+$("#c-sale_id").val(),
+                        			url: 'sale/detaillist/del?sale_id='+key,
         								   success: function (data, ret) {
              							 //更新汇总数据
                         				Fast.api.ajax({
@@ -233,7 +353,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
         	  										$("#c-sale_weight").val(data[0]['weight']);
         	  										$("#c-sale_price").val((data[0]['amount']/data[0]['weight']).toFixed(2));
         	  										$("table").bootstrapTable('refresh');//刷新表格
-        	  										return false;
+        	  										//return false;
         	  									},function (data) {			
         	  		 								return false;
         	  									});
@@ -278,12 +398,12 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
         	  	if (event.keyCode == '13') {
         	  		Fast.api.ajax({
         	  			url:'sale/detaillist/scan',
-        	  			data:{product_code:$("#c-product_code").val(),sale_code:Config.sale_id}
+        	  			data:{product_code:$("#c-product_code").val(),sale_code:Config.key}
         	  		},function (data,ret) {
         	  			$("#c-product_code").val('');
         	  			$("table").bootstrapTable('refresh');//刷新表格
         	  		},function (data) {
-        	  		
+        	  	   	$("#c-product_code").select();
         	  		});
         	  	}
         	  });
@@ -292,7 +412,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
             Table.api.init({
                 extend: {
                     index_url: 'sale/detaillist/input' + location.search,
-                    del_url: 'sale/detaillist/del',
+                    del_url: 'sale/detaillist/inputdel',
                     table: 'product_product',
                 }
             });
@@ -324,17 +444,80 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
                         {field: 'product_mother_code', title: __('Product_mother_code'), visible:false,operate: 'LIKE'},
                         {field: 'product_storage', title: __('Product_storage'), operate: 'LIKE'},
                         {field: 'product_product_datetime', title: __('Product_product_datetime'),visible:false, operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        {field: 'product_inbound_datetime', title: __('Product_inbound_datetime'), visible:false,operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        //{field: 'product_sale_datetime', title: __('Product_sale_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        //{field: 'product_group', title: __('Product_group'), operate: 'LIKE'},
-                        //{field: 'product_machine', title: __('Product_machine'), operate: 'LIKE'},
-                        //{field: 'product_operator', title: __('Product_operator'), operate: 'LIKE'},
-                        //{field: 'product_QC', title: __('Product_qc'), operate: 'LIKE'},
-                        //{field: 'product_sale_code', title: __('Product_sale_code'), operate: 'LIKE'},
-                        //{field: 'product_sale_operator', title: __('Product_sale_operator'), operate: 'LIKE'},
-                        //{field: 'product_sale_person', title: __('Product_sale_person'), operate: 'LIKE'},
-                        //{field: 'product_status', title: __('Product_status'), searchList: {"0":__('Product_status 0'),"1":__('Product_status 1'),"2":__('Product_status 2'),"3":__('Product_status 3')}, formatter: Table.api.formatter.status},
-                        //{field: 'company_id', title: __('Company_id')},
+                        {field: 'product_inbound_datetime', title: __('Product_inbound_datetime'), visible:false,operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},       
+                        {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
+                    ]
+                ]
+            });
+
+            parent.window.$(".layui-layer-iframe").find(".layui-layer-close").on('click',function () {
+					Fast.api.close(Config.key);            
+            });
+            // 为表格绑定事件
+            Table.api.bindevent(table);
+        },
+        allinput: function () {
+        	//按钮功能
+        	$(document).on("click",".btn-select",function () {
+        		var rows = $("#table").bootstrapTable('getSelections');
+                    if(rows.length<1){
+                       alert('请选择一条记录!');
+                       return;
+                    }
+               Fast.api.ajax({
+        	  			url:'sale/detaillist/allin',
+        	  			data:{sale_id:rows[0].sale_code,sale_code:Config.key}
+        	  		},function (data,ret) {
+        	  			$("#c-sale_code").val('');
+        	  			$("table").bootstrapTable('refresh');//刷新表格
+        	  			Fast.api.close(Config.key);
+        	  		},function (data) {
+        	  		
+        	  		});   
+        	
+               
+					
+				});
+			//输入框扫码功能
+        	$("#c-sale_code").bind("keypress",function (event) {
+        	  	if (event.keyCode == '13') {
+        	  		Fast.api.ajax({
+        	  			url:'sale/detaillist/allin',
+        	  			data:{sale_id:$("#c-sale_code").val(),sale_code:Config.key}
+        	  		},function (data,ret) {
+        	  			$("#c-sale_code").val('');
+        	  			$("table").bootstrapTable('refresh');//刷新表格
+        	  			Fast.api.close(Config.key);
+        	  		},function (data) {
+        	  	   	$("#c-sale_code").select();
+        	  		});
+        	  	}
+        	  });
+        	  
+            Controller.api.bindevent();
+            // 初始化表格参数配置
+            Table.api.init({
+                extend: {
+                    index_url: 'sale/detaillist/allinput' + location.search,
+                    del_url: 'sale/detaillist/del',
+                    table: 'product_product',
+                }
+            });
+            var table = $("#table");
+            // 初始化表格
+            table.bootstrapTable({
+                url: $.fn.bootstrapTable.defaults.extend.index_url,
+                pk: 'sale_code',
+                sortName: 'sale_code',
+                search:false,
+                commonSearch:false,
+                columns: [
+                    [
+                        {checkbox: true},
+                        //{field: 'product_id', title: __('Product_id')},
+                        {field: 'sale_code', title: __('Sale_code'), operate: 'LIKE'},
+                        {field: 'sale_weight', title: __('Sale_weight'),  operate: 'LIKE'},
+                        {field: 'sale_number', title: __('Sale_number'), operate: 'LIKE'},
                         {field: 'operate', title: __('Operate'), table: table, events: Table.api.events.operate, formatter: Table.api.formatter.operate}
                     ]
                 ]
@@ -348,7 +531,26 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','selectpage'], functio
         },
         api: {
             bindevent: function () {
-                Form.api.bindevent($("form[role=form]"));
+                Form.api.bindevent($("form[role=form]"),function (data,ret) {
+                  //数据保存成功后执行，清除产品重量接头数，再打印
+                  $("#c-sale_code").val(data);
+                
+                  //打印单据
+                  //Fast.api.open('product/product/printingone?product_id='+data.product_id,'打印标签',{}); 	
+                 
+                  //刷新表格
+   				  // $("#table").bootstrapTable('refresh');
+   				   }, function(data, ret){
+  						Toastr.success("失败");
+				   	}, function(success, error){
+
+					//bindevent的第三个参数为提交前的回调
+					//如果我们需要在表单提交前做一些数据处理，则可以在此方法处理
+					//注意如果我们需要阻止表单，可以在此使用return false;即可
+					//如果我们处理完成需要再次提交表单则可以使用submit提交,如下
+					//Form.api.submit(this, success, error);
+					//return false;
+                });
             }
         }
     };

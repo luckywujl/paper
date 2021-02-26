@@ -2,6 +2,25 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
 
     var Controller = {
         index: function () {
+        	$(document).on("click",".btn-select",function () {
+        		var ids = Table.api.selectedids(table);
+               var id = ids.pop();
+               Fast.api.ajax({
+        	  		 		url:'sale/detaillist/select?sale_id='+id,
+        	  				data:{sale_id:id}
+        	  				},function (data,ret) {
+        	  					Fast.api.close(data);
+        	  					//对总表进行汇总，求总件数，总重量，总金额，倒算单价
+        	  					
+        	  					$("table").bootstrapTable('refresh');//刷新表格
+        	  					return false;
+        	  				},function (data) {
+        	  					$("table").bootstrapTable('refresh');//刷新表格
+        	  		 			return false;
+        	  				});
+					
+				});
+        	
             // 初始化表格参数配置
             Table.api.init({
                 extend: {
@@ -14,6 +33,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             });
 
             var table = $("#table");
+            var ids = Table.api.selectedids(table);
+               var id = ids.pop();
 
             // 初始化表格
             table.bootstrapTable({
@@ -45,36 +66,33 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
                         {field: 'sale_remark', title: __('Sale_remark')},
                         {field: 'operate', title: __('Operate'), table: table, 
                         	buttons:[
+                        		
                         		{
                         			name:'select',
-                        			//text:'选择',
+                        			
                         			classname: 'btn btn-xs btn-success btn-magic btn-ajax',
+                        			//classname: 'btn btn-xs btn-primary btn-dialog',
       							      icon: 'fa fa-magic',
-                        			confirm: '确认打开草稿',
-                        		//	url: 'sale/saleraft/select',
+                        			confirm: '确定要打开草稿？',
+                        			url: 'sale/detaillist/select?sale_id={sale_id}',
         								   success: function (data, ret) {
-        								   	Fast.api.close({sale_code});
-             							   //Layer.alert(ret.msg + ",返回数据：" + JSON.stringify(data));
-               						 //如果需要阻止成功提示，则必须使用return false;
-                						 //return false;
+             							 
+              							   Fast.api.close(data); 
+                        				//Layer.alert(data.sale_code);
+               						 
+                						 return false;
             							},
-          							   error: function (data, ret) {
-               							 console.log(data, ret);
-            							    Layer.alert(ret.msg);
-             							    return false;
+            							error:function (data, ret) {
+               							console.log(data, ret);
+              							   Layer.alert(ret.msg);
+                							return false;
           							   }
-
-                        		}
+                        		},               
                         	
                         	],
                         	events: Table.api.events.operate, formatter: Table.api.formatter.operate},
                         
-                        //{field: 'sale_verify_datetime', title: __('Sale_verify_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        //{field: 'sale_collection_datetime', title: __('Sale_collection_datetime'), operate:'RANGE', addclass:'datetimerange', autocomplete:false, formatter: Table.api.formatter.datetime},
-                        //{field: 'sale_verify_person', title: __('Sale_verify_person'), operate: 'LIKE'},
-                        //{field: 'sale_collection_person', title: __('Sale_collection_person'), operate: 'LIKE'},
-                        //{field: 'sale_status', title: __('Sale_status'), searchList: {"0":__('Sale_status 0'),"1":__('Sale_status 1'),"2":__('Sale_status 2'),"3":__('Sale_status 3')}, formatter: Table.api.formatter.status},
-                        //{field: 'company_id', title: __('Company_id'), operate: 'LIKE'},
+                        
                         
                     ]
                 ]

@@ -3,6 +3,7 @@
 namespace app\admin\controller\sale;
 use Think\Db;
 use app\common\controller\Backend;
+use app\admin\model\sale as sale;
 
 /**
  * 销售主管理
@@ -105,7 +106,29 @@ class Saledraft extends Backend
         $this->error(__('Parameter %s can not be empty', 'ids'));
     }
 
-    
+    /**
+     * 选择草稿
+     */
+    public function select()
+    {
+       if(!empty($this->request->get('sale_id'))) {
+    		//1、接收sale_code参数
+    		$sale_id = $this->request->get('sale_id');
+    		list($where, $sort, $order, $offset, $limit) = $this->buildparams();
+    		$sale_main = new sale\Mainlist();
+    		$main = $sale_main
+    						->where($where)->where('sale_id',$sale_id)
+    						->find();
+    		
+         if ($main){
+         	 $this->success($sale_id,null,$main);
+         	//$this->error($sale_id);
+         } else{
+             $this->error($sale_id,null,$sale_id);
+         }  
+      }   
+       
+    }
     
 
 

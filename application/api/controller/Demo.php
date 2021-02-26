@@ -3,6 +3,11 @@
 namespace app\api\controller;
 
 use app\common\controller\Api;
+use app\admin\model\AdminLog;
+use app\common\controller\Backend;
+use think\Config;
+use think\Hook;
+use think\Validate;
 
 /**
  * 示例接口
@@ -15,7 +20,7 @@ class Demo extends Api
     //如果接口已经设置无需登录,那也就无需鉴权了
     //
     // 无需登录的接口,*表示全部
-    protected $noNeedLogin = ['test', 'test1'];
+    protected $noNeedLogin = ['test', 'test1','login'];
     // 无需鉴权的接口,*表示全部
     protected $noNeedRight = ['test2'];
 
@@ -40,7 +45,35 @@ class Demo extends Api
      */
     public function test()
     {
-        $this->success('返回成功', $this->request->param());
+    	
+      $params=$this->request->param();
+      
+    	$result = $this->auth->login($params['user'], md5(md5($params['pass']).'488f89'), 0);
+            if ($result === true) {
+                Hook::listen("admin_login_after", $this->request);
+                $this->success(__('Login successful'), $url, ['url' => $url, 'id' => $this->auth->id, 'username' => $username, 'avatar' => $this->auth->avatar]);
+            } else {
+                $msg = $this->auth->getError();
+                $msg = $msg ? $msg : __('Username or password is incorrect');
+                $this->success($msg, md5(md5($params['pass']).'488f89'));
+            }
+        //$this->success('返回成功', $this->request->param());
+    }
+    public function login()
+    {
+        $username = I("username", '', 'trim');
+        $password = I("password", '', 'md5');
+        $user = M("paper_admin")->where(array("user_code"=>$username))->find();
+        if ($user) {
+            print ($this->api_rule(($user),"验证完成，正在登陆，请稍候..."));
+            //使用规范格式json下发数据
+            //上面的M方法使用是的find(),获得的结果是非数组，因此可以使用“+”运算符合并，获得是简单的嵌套json
+        } else {
+            $res['code'] = "0";
+            $res['message'] = "用户名或者密码错误!";
+            print json_encode($res);
+        }
+
     }
 
     /**

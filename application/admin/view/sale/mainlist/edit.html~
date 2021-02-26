@@ -1,0 +1,106 @@
+<div class="panel panel-default panel-intro">
+    {:build_heading()}
+
+<div class="panel-body">
+<form id="edit-form" class="form-horizontal" role="form" data-toggle="validator" method="POST" action="">
+
+    <div class="form-group">
+        <div class="col-xs-12 col-sm-2"  hidden="hidden">
+            <input id="c-sale_id" class="form-control "  readonly="readonly" name="row[sale_id]" type="text" value="{$row.sale_id|htmlentities}">
+        </div>
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_code')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_code" class="form-control "  readonly="readonly" name="row[sale_code]" type="text" value="{$row.sale_code|htmlentities}">
+        </div>
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_datetime')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_datetime" class="form-control datetimepicker" readonly="readonly" data-date-format="YYYY-MM-DD HH:mm:ss" data-use-current="true" name="row[sale_datetime]" type="text" value="{:date('Y-m-d H:i:s')}">
+        </div>
+    
+        <div class="col-xs-12 col-sm-2" hidden="hidden">
+            <input id="c-sale_custom_id" data-rule="required" readonly="readonly"   class="form-control" name="row[sale_custom_id]" type="text" value="{$row.sale_custom_id|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_name')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            
+        		<input id="c-sale_custom_name"   class="form-control " readonly="readonly" name="row[sale_custom_name]" type="text" value="{$row.sale_custom_name|htmlentities}">
+        </div>
+        
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_contact')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_contact" class="form-control" readonly="readonly" name="row[sale_custom_contact]" type="text" value="{$row.sale_custom_contact|htmlentities}">
+        </div>
+        
+        
+        
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_tel')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_tel" class="form-control" readonly="readonly" name="row[sale_custom_tel]" type="text" value="{$row.sale_custom_tel|htmlentities}">
+        </div>
+        
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_custom_address')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_custom_address" class="form-control" readonly="readonly" name="row[sale_custom_address]" type="text" value="{$row.sale_custom_address|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_number')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_number" readonly="readonly" class="form-control"  readonly="readonly" name="row[sale_number]" type="number" value="{$row.sale_number|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_weight')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_weight" readonly="readonly" class="form-control" readonly="readonly" name="row[sale_weight]" type="number" value="{$row.sale_weight|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_price')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_price" class="form-control" readonly="readonly" name="row[sale_price]" type="number" value="{$row.sale_price|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_amount')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_amount" readonly="readonly" class="form-control" name="row[sale_amount]" type="number" value="{$row.sale_amount|htmlentities}">
+        </div>
+   
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_person')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_person" data-source="setting/person/index" readonly="readonly" data-field="person" data-primary-key="person" class="form-control selectpage" name="row[sale_person]" type="text" value="{$row.sale_person|htmlentities}">
+        </div>
+    
+        <label class="control-label col-xs-12 col-sm-1">{:__('Sale_remark')}:</label>
+        <div class="col-xs-12 col-sm-2">
+            <input id="c-sale_remark" class="form-control " readonly="readonly"  name="row[sale_remark]" type="text" value="{$row.sale_status|htmlentities}">
+        </div>
+    </div>
+    <div class="form-group layer-footer">
+        <label class="control-label col-xs-12 col-sm-4"></label>
+        <div class="col-xs-12 col-sm-8">
+            <button type="button" id="btn-rverify" class="btn btn-success btn-embossed btn-rverify {:$row.sale_status=='1'?'':'hide'}">{:__('反审核')}</button> 
+            <button type="button" class="btn btn-info btn-printing  btn-embossed">{:__('打印')}</button>
+            <button type="button" id="btn-verify" class="btn btn-success btn-embossed btn-verify {:$row.sale_status=='0'?'':'hide'}">{:__('审核过账')}</button> 
+            <button type="button" id="btn-collection" class="btn btn-success btn-embossed btn-collection {:$row.sale_status=='1'?'':'hide'}">{:__('收款')}</button>     
+        </div>
+    </div>    
+</form>
+<div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade active in" id="one">
+                <div class="widget-body no-padding">
+                    <div id="toolbar" class="toolbar">
+                        <a href="javascript:;" class="btn btn-primary btn-refresh" title="{:__('Refresh')}" ><i class="fa fa-refresh"></i> </a>
+                    </div>
+                    <table id="table" class="table table-striped table-bordered table-hover table-nowrap"
+                           data-operate-edit="{:$auth->check('sale/detaillist/edit')}" 
+                           data-operate-del="{:$auth->check('sale/detaillist/del')}" 
+                           width="100%">
+                    </table>
+                </div>
+            </div>
+
+        </div>
+            </div>
+</div>

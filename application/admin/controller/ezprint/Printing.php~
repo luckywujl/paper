@@ -17,7 +17,6 @@ class Printing extends Backend
      * @var \app\admin\model\Printing\Printing
      */
     protected $model = null;
-    protected $noNeedRight = ['get'];
 
     public function _initialize()
     {

@@ -44,6 +44,13 @@ return [
     'Sale_status 2'            => '已收款',
     'Sale_status 3'            => '已作废',
     'Company_id'               => '数据归属',
+    'Product_code'				 => '编码',
+    'Product_productweight'	 => '克重',
+    'Product_specs'				 => '规格',
+    'Product_unit'				 => '单位',
+    'Product_weight'				 => '重量',
+    'Product_diameter'			 => '卷径',
+    'Product_storage' 			 => '货品仓库', 
     
     'input'   						 => '扫码',
     'allinput'						 => '批量导入'
