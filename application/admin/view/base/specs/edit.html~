@@ -9,7 +9,7 @@
         		<div id="qrcode"></div>
         </div>
     </div>
-    <li><a href="{“base/product/index”}" target='_blank'>帮助</a></li>
+   
     <div class="form-group layer-footer">
         <label class="control-label col-xs-12 col-sm-2"></label>
         <div class="col-xs-12 col-sm-8">

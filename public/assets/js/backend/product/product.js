@@ -145,7 +145,7 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form','printing'], function 
             	var aObj = document.getElementById("product_date");
                    //aObj.href = "http://www.baidu.com";
                   //根据id获取超链接,设置文字内容 
-                  aObj.innerText = myDate.getFullYear()+"\xa0\xa0\xa0\xa0\xa0"+(parseInt(myDate.getMonth())+1)+"\xa0\xa0\xa0\xa0\xa0"+myDate.getDate();
+                  aObj.innerText = myDate.getFullYear()+"\xa0\xa0\xa0\xa0\xa0"+(parseInt(myDate.getMonth())+1)+"\xa0\xa0\xa0\xa0\xa0\xa0\xa0"+myDate.getDate();
   			     // $("#product_date").innerText = myDate.getFullYear()+'-'+(myDate.getMonth()+1)+'-'+myDate.getDate()+" "+myDate.getHours()+':'+myDate.getMinutes()+':'+myDate.getSeconds());
 				 
             	window.print();

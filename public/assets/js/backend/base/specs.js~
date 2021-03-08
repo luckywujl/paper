@@ -56,8 +56,8 @@ define(['jquery', 'bootstrap', 'backend', 'table', 'form'], function ($, undefin
             		text:$("#c-specs").val(),
             	});
             	window.print();
-            	
-            	Layer.close(index);
+            	parent.Layer.closeAll();
+           
             });
         },
         api: {

@@ -20,7 +20,7 @@ class Product extends Backend
     protected $searchFields = 'product_code,product_name';
     protected $dataLimit = 'personal';
     protected $dataLimitField = 'company_id';
-    protected $noNeedRight = ['printingone'];
+    protected $noNeedRight = ['printingone','printing'];
 
     public function _initialize()
     {
@@ -55,6 +55,7 @@ class Product extends Backend
                 }
                 //确定产品编号
                 $main = $this->model
+                ->where($where)
                 ->where('product_product_datetime','between time',[date('Y-m-d 00:00:01'),date('Y-m-d 23:59:59')])
                 ->order('product_code','desc')
                 ->limit(1)
